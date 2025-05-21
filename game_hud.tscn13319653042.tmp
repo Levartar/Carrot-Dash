@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://hbt7t6bofq2k"]
+
+[ext_resource type="Texture2D" uid="uid://6swrfx3qbjtd" path="res://assets/Spritesheets/spritesheet-tiles-double.png" id="1_og655"]
+[ext_resource type="Script" uid="uid://ckieqkexbk7d6" path="res://scripts/digitDisplay.gd" id="1_q4g6c"]
+[ext_resource type="Script" uid="uid://bimtrw5n2yl11" path="res://scripts/game_hud.gd" id="1_vpmjm"]
+[ext_resource type="SpriteFrames" uid="uid://c6o1o0qxkggt0" path="res://assets/digit_frames.tres" id="4_2uf8q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpmjm"]
+atlas = ExtResource("1_og655")
+region = Rect2(1920, 1152, 128, 128)
+
+[node name="Game_Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vpmjm")
+
+[node name="CoinContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CoinContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_vpmjm")
+
+[node name="CoinDigits" type="HBoxContainer" parent="CoinContainer"]
+layout_mode = 2
+script = ExtResource("1_q4g6c")
+
+[node name="Digit0" type="AnimatedSprite2D" parent="CoinContainer/CoinDigits"]
+position = Vector2(-4, 0)
+sprite_frames = ExtResource("4_2uf8q")
+
+[node name="Digit1" type="AnimatedSprite2D" parent="CoinContainer/CoinDigits"]
+position = Vector2(-4, 0)
+sprite_frames = ExtResource("4_2uf8q")
+
+[node name="Digit2" type="AnimatedSprite2D" parent="CoinContainer/CoinDigits"]
+position = Vector2(-4, 0)
+sprite_frames = ExtResource("4_2uf8q")
+
+[node name="SpeedContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="SpeedDigit" type="Control" parent="SpeedContainer"]
+layout_mode = 2
+script = ExtResource("1_q4g6c")
