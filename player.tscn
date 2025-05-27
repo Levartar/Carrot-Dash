@@ -145,7 +145,7 @@ script = ExtResource("1_sweqy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_n7ghd")
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"damaged"
+animation = &"glide"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
