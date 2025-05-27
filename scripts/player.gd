@@ -17,7 +17,7 @@ const GLIDE_HOLD_THRESHOLD = 0.5
 const slide_height := 120
 const slide_boost = 50
 const slide_duration = 0.5
-const invuln_duration = 2.0
+const invuln_duration = 3.0
 
 var jumping = false
 var gliding = false
@@ -27,6 +27,7 @@ var jump_held_time = 0.0
 var slide_timer = 0.0
 var particle_amount = 0
 var invuln_timer = 0.0
+var damage_timer = 0.0
 
 
 var coins = 0 
@@ -95,8 +96,10 @@ func _physics_process(delta: float) -> void:
 			
 	if invulnerable:
 		invuln_timer -= delta
+		damage_timer -= delta
 		$AnimationPlayer.play("take_damage")
-		print("invuln")
+		if damage_timer > 0.0:
+			$AnimatedSprite2D.play("damaged")
 		if invuln_timer <= 0.0:
 			invulnerable = false
 			$AnimationPlayer.stop()
@@ -139,5 +142,7 @@ func _on_damage_area_2d_body_entered(body: Node2D) -> void:
 	if body.name=="Player" and !invulnerable:
 		print("take damage")
 		velocity.x -= 200
+		$AnimatedSprite2D.play("damaged")
 		invuln_timer = invuln_duration
+		damage_timer = 0.5
 		invulnerable = true
