@@ -1,148 +1,13 @@
-[gd_scene load_steps=49 format=4 uid="uid://bad7x6ki0de2w"]
+[gd_scene load_steps=32 format=4 uid="uid://bad7x6ki0de2w"]
 
-[ext_resource type="Texture2D" uid="uid://w1yq57oafxhx" path="res://assets/Spritesheets/spritesheet-characters-double.png" id="1_e2o6t"]
-[ext_resource type="Script" uid="uid://y5pyt15dgekg" path="res://scripts/player.gd" id="1_feb5d"]
 [ext_resource type="Script" uid="uid://d3r87rcru1j84" path="res://scripts/game.gd" id="1_ryrav"]
 [ext_resource type="Texture2D" uid="uid://6swrfx3qbjtd" path="res://assets/Spritesheets/spritesheet-tiles-double.png" id="2_feb5d"]
-[ext_resource type="Shader" uid="uid://bmhlrk8uyvfh7" path="res://shader/flash.gdshader" id="3_mfdv2"]
 [ext_resource type="Script" uid="uid://rqywuxn0gamb" path="res://scripts/mold_wall.gd" id="4_7jktm"]
 [ext_resource type="Texture2D" uid="uid://b0xn0l135conu" path="res://assets/Spritesheets/spritesheet-backgrounds-double.png" id="4_fc0e3"]
-[ext_resource type="PackedScene" uid="uid://hbt7t6bofq2k" path="res://game_hud.tscn" id="7_eow3j"]
 [ext_resource type="Script" uid="uid://dt6fnaalnf3bx" path="res://coin.gd" id="8_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://hgdiuf70py43" path="res://player.tscn" id="8_vef74"]
 [ext_resource type="Shader" uid="uid://c6ljpro38re7x" path="res://shader/water.gdshader" id="9_hve3p"]
 [ext_resource type="Texture2D" uid="uid://ckauof5xdb5il" path="res://icon.svg" id="10_mfdv2"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iotsf"]
-shader = ExtResource("3_mfdv2")
-shader_parameter/color = Color(1, 0.329412, 1, 1)
-shader_parameter/flashState = 0.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lc2xo"]
-atlas = ExtResource("1_e2o6t")
-region = Rect2(1024, 512, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hve3p"]
-atlas = ExtResource("1_e2o6t")
-region = Rect2(768, 1792, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fc0e3"]
-atlas = ExtResource("1_e2o6t")
-region = Rect2(1024, 768, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_feb5d"]
-atlas = ExtResource("1_e2o6t")
-region = Rect2(1024, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mfdv2"]
-atlas = ExtResource("1_e2o6t")
-region = Rect2(1024, 1024, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7jktm"]
-atlas = ExtResource("1_e2o6t")
-region = Rect2(768, 1536, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ryrav"]
-atlas = ExtResource("1_e2o6t")
-region = Rect2(768, 1792, 256, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fc0e3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lc2xo")
-}],
-"loop": true,
-"name": &"damaged",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hve3p")
-}],
-"loop": true,
-"name": &"glide",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fc0e3")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_feb5d")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mfdv2")
-}],
-"loop": true,
-"name": &"slide",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7jktm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ryrav")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
-size = Vector2(120, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iotsf"]
-atlas = ExtResource("2_feb5d")
-region = Rect2(1808.36, 2070, 100, 91.8184)
-
-[sub_resource type="Animation" id="Animation_mfdv2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/flashState")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_lc2xo"]
-resource_name = "take_damage"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/flashState")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_215e1"]
-_data = {
-&"RESET": SubResource("Animation_mfdv2"),
-&"take_damage": SubResource("Animation_lc2xo")
-}
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_feb5d"]
 tile_data = PackedInt32Array(0, 458754, 268435470, 65536, 524290, 0, 131072, 524290, 268435458, 1, 458754, 16, 65537, 524290, 1, 131073, 524290, 4, 2, 458754, 16, 65538, 524290, 1, 131074, 524290, 4, 3, 458754, 16, 65539, 524290, 1, 131075, 524290, 4, 4, 458754, 14, 65540, 524290, 268435456, 131076, 524290, 2)
@@ -711,58 +576,8 @@ size = Vector2(120, 66)
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ryrav")
 
-[node name="Player" type="CharacterBody2D" parent="."]
-z_index = 10
-position = Vector2(471, 191)
-script = ExtResource("1_feb5d")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-material = SubResource("ShaderMaterial_iotsf")
-sprite_frames = SubResource("SpriteFrames_fc0e3")
-animation = &"damaged"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-visible = false
-position = Vector2(0, 24)
-shape = SubResource("RectangleShape2D_fc0e3")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(319, 0)
-zoom = Vector2(0.5, 0.5)
-
-[node name="Game_Hud" parent="Player" instance=ExtResource("7_eow3j")]
-offset_left = -629.0
-offset_top = -465.0
-offset_right = -629.0
-offset_bottom = -465.0
-
-[node name="FireParticles" type="CPUParticles2D" parent="Player"]
-z_index = 1
-position = Vector2(-15, 113)
-texture = SubResource("AtlasTexture_iotsf")
-lifetime = 0.51
-speed_scale = 0.35
-emission_shape = 3
-emission_rect_extents = Vector2(40, 10)
-direction = Vector2(-1, -0.5)
-spread = 18.18
-gravity = Vector2(0, 500)
-angular_velocity_min = 720.0
-angular_velocity_max = 720.0
-linear_accel_min = 100.0
-linear_accel_max = 100.0
-angle_min = -152.8
-angle_max = 109.0
-scale_amount_min = 0.0
-scale_amount_max = 0.0
-
-[node name="RayCast2D" type="RayCast2D" parent="Player"]
-target_position = Vector2(0, -100)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-libraries = {
-&"": SubResource("AnimationLibrary_215e1")
-}
+[node name="Player" parent="." instance=ExtResource("8_vef74")]
+position = Vector2(408, 184)
 
 [node name="Map_node" type="Node2D" parent="."]
 
@@ -801,6 +616,7 @@ tile_set = SubResource("TileSet_7jktm")
 script = SubResource("GDScript_fc0e3")
 
 [node name="MoldWall" type="Node2D" parent="."]
+z_index = 5
 script = ExtResource("4_7jktm")
 
 [node name="Area2D" type="Area2D" parent="MoldWall"]
@@ -861,14 +677,13 @@ autoplay = "cointurn"
 shape = SubResource("RectangleShape2D_eow3j")
 
 [node name="Coin3" type="Node2D" parent="Coins"]
-position = Vector2(275, 50)
+position = Vector2(275, 51)
 script = ExtResource("8_j5wjh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coins/Coin3"]
 sprite_frames = SubResource("SpriteFrames_eow3j")
 animation = &"cointurn"
 autoplay = "cointurn"
-frame_progress = 0.863402
 
 [node name="CoinArea" type="Area2D" parent="Coins/Coin3"]
 
@@ -876,14 +691,13 @@ frame_progress = 0.863402
 shape = SubResource("RectangleShape2D_eow3j")
 
 [node name="Coin4" type="Node2D" parent="Coins"]
-position = Vector2(2387, -76)
+position = Vector2(2387, -77)
 script = ExtResource("8_j5wjh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coins/Coin4"]
 sprite_frames = SubResource("SpriteFrames_eow3j")
 animation = &"cointurn"
 autoplay = "cointurn"
-frame_progress = 0.272575
 
 [node name="CoinArea" type="Area2D" parent="Coins/Coin4"]
 
@@ -891,14 +705,13 @@ frame_progress = 0.272575
 shape = SubResource("RectangleShape2D_eow3j")
 
 [node name="Coin5" type="Node2D" parent="Coins"]
-position = Vector2(2515, -76)
+position = Vector2(2515, -77)
 script = ExtResource("8_j5wjh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coins/Coin5"]
 sprite_frames = SubResource("SpriteFrames_eow3j")
 animation = &"cointurn"
 autoplay = "cointurn"
-frame_progress = 0.863402
 
 [node name="CoinArea" type="Area2D" parent="Coins/Coin5"]
 
@@ -913,7 +726,6 @@ script = ExtResource("8_j5wjh")
 sprite_frames = SubResource("SpriteFrames_eow3j")
 animation = &"cointurn"
 autoplay = "cointurn"
-frame_progress = 0.863402
 
 [node name="CoinArea" type="Area2D" parent="Coins/Coin6"]
 
@@ -939,7 +751,7 @@ texture = ExtResource("10_mfdv2")
 [node name="Obstacles" type="Node2D" parent="."]
 
 [node name="Spikes" type="Node2D" parent="Obstacles"]
-visible = false
+position = Vector2(3776, 344)
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Spikes"]
 texture = SubResource("AtlasTexture_215e1")
@@ -951,7 +763,7 @@ position = Vector2(1.5, 6)
 shape = SubResource("RectangleShape2D_7sc4i")
 
 [node name="Spikes2" type="Node2D" parent="Obstacles"]
-position = Vector2(3776, 344)
+position = Vector2(6464, 216)
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacles/Spikes2"]
 texture = SubResource("AtlasTexture_215e1")
@@ -962,10 +774,8 @@ texture = SubResource("AtlasTexture_215e1")
 position = Vector2(1.5, 6)
 shape = SubResource("RectangleShape2D_7sc4i")
 
-[connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="MoldWall/Area2D" to="Player" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Coins/Coin/CoinArea" to="Player" method="_on_coin_entered"]
 [connection signal="body_entered" from="Coins/Coin/CoinArea" to="Coins/Coin" method="_on_coin_area_body_entered"]
+[connection signal="body_entered" from="Coins/Coin/CoinArea" to="Player" method="_on_coin_entered"]
 [connection signal="body_entered" from="Coins/Coin2/CoinArea" to="Player" method="_on_coin_entered"]
 [connection signal="body_entered" from="Coins/Coin2/CoinArea" to="Coins/Coin2" method="_on_coin_area_body_entered"]
 [connection signal="body_entered" from="Coins/Coin3/CoinArea" to="Player" method="_on_coin_entered"]
