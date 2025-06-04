@@ -9,11 +9,12 @@ const slide_collider_pos_height = 65
 const gravity = 48
 const glide_gravity = 1
 const speed = 600
-const minSpeed = 300
+const minSpeed = 400
 const maxSpeed = 800
-const acceleration = 1
+const acceleration = 10
 const jump_force = -1400
 const GLIDE_HOLD_THRESHOLD = 0.5
+const glide_decceleration = 6
 const slide_height := 120
 const slide_boost = 50
 const slide_duration = 0.5
@@ -107,8 +108,11 @@ func _physics_process(delta: float) -> void:
 	# Apply gravity and acceleration
 	if gliding:
 		velocity.y += glide_gravity
-		velocity.x -= acceleration
+		velocity.x -= glide_decceleration
+		if velocity.x < minSpeed:
+			velocity.x = minSpeed
 	else:
+		print(velocity.x)
 		velocity.y += gravity
 		#Autoaccelerate Speed better to do this in visible stages
 		if velocity.x < minSpeed:
@@ -141,7 +145,7 @@ func _on_coin_entered(body: Node2D) -> void:
 func _on_damage_area_2d_body_entered(body: Node2D) -> void:
 	if body.name=="Player" and !invulnerable:
 		print("take damage")
-		velocity.x -= 200
+		velocity.x = minSpeed
 		$AnimatedSprite2D.play("damaged")
 		invuln_timer = invuln_duration
 		damage_timer = 0.5
