@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bad7x6ki0de2w"]
+[gd_scene load_steps=49 format=4 uid="uid://bad7x6ki0de2w"]
 
 [ext_resource type="Script" uid="uid://d3r87rcru1j84" path="res://scripts/game.gd" id="1_ryrav"]
 [ext_resource type="Texture2D" uid="uid://6swrfx3qbjtd" path="res://assets/Spritesheets/spritesheet-tiles-double.png" id="2_feb5d"]
@@ -7,7 +7,13 @@
 [ext_resource type="Script" uid="uid://dt6fnaalnf3bx" path="res://coin.gd" id="8_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://hgdiuf70py43" path="res://player.tscn" id="8_vef74"]
 [ext_resource type="Shader" uid="uid://c6ljpro38re7x" path="res://shader/water.gdshader" id="9_hve3p"]
+[ext_resource type="Script" uid="uid://ctmbffgiaio2g" path="res://clouds.gd" id="9_iotsf"]
+[ext_resource type="Texture2D" uid="uid://dpx85nl3fjaf4" path="res://assets/Backgrounds/01_Background_852x852.png" id="9_vef74"]
+[ext_resource type="Texture2D" uid="uid://dm7787bet2bd1" path="res://assets/Backgrounds/02_Background_2556x426.png" id="10_hve3p"]
 [ext_resource type="Texture2D" uid="uid://ckauof5xdb5il" path="res://icon.svg" id="10_mfdv2"]
+[ext_resource type="Texture2D" uid="uid://cngpcn6u8tqi5" path="res://assets/Backgrounds/03_Background_852x852.png" id="11_mfdv2"]
+[ext_resource type="Texture2D" uid="uid://rcm5hy7xae3t" path="res://assets/Backgrounds/04_Background_2556x426.png" id="13_215e1"]
+[ext_resource type="Texture2D" uid="uid://b8e6kqnwbwy2t" path="res://assets/Backgrounds/05_Background_284x426.png" id="14_7sc4i"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_feb5d"]
 tile_data = PackedInt32Array(0, 458754, 268435470, 65536, 524290, 0, 131072, 524290, 268435458, 1, 458754, 16, 65537, 524290, 1, 131073, 524290, 4, 2, 458754, 16, 65538, 524290, 1, 131074, 524290, 4, 3, 458754, 16, 65539, 524290, 1, 131075, 524290, 4, 4, 458754, 14, 65540, 524290, 268435456, 131076, 524290, 2)
@@ -564,9 +570,9 @@ shader_parameter/noise = SubResource("NoiseTexture2D_mfdv2")
 shader_parameter/noise2 = SubResource("NoiseTexture2D_iotsf")
 shader_parameter/scroll = Vector2(0.05, 0.05)
 shader_parameter/scroll2 = Vector2(0.05, 0.05)
-shader_parameter/distortion_strength = 0.2
-shader_parameter/light_start = 0.275
-shader_parameter/light_end = 0.4
+shader_parameter/distortion_strength = 0.335
+shader_parameter/light_start = 0.196
+shader_parameter/light_end = 0.0
 shader_parameter/tone_color = Color(0, 0.494118, 0.392157, 1)
 shader_parameter/top_color = Color(0.389287, 0.389287, 0.389287, 1)
 
@@ -576,6 +582,117 @@ region = Rect2(1281, 1201, 126, 79)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7sc4i"]
 size = Vector2(120, 66)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_hve3p"]
+tile_data = PackedInt32Array(0, 0, 1, 1, 65536, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_mfdv2"]
+tile_data = PackedInt32Array(0, 0, 2, 1, 65536, 2)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iotsf"]
+texture = ExtResource("9_vef74")
+texture_region_size = Vector2i(852, 852)
+2:0/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfdv2"]
+texture = ExtResource("10_hve3p")
+texture_region_size = Vector2i(2556, 426)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc2xo"]
+texture = ExtResource("11_mfdv2")
+texture_region_size = Vector2i(852, 852)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80cx4"]
+texture = ExtResource("13_215e1")
+texture_region_size = Vector2i(2556, 426)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e8heu"]
+texture = ExtResource("14_7sc4i")
+texture_region_size = Vector2i(284, 426)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+7:1/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lc2xo"]
+tile_size = Vector2i(852, 852)
+sources/1 = SubResource("TileSetAtlasSource_mfdv2")
+sources/0 = SubResource("TileSetAtlasSource_iotsf")
+sources/2 = SubResource("TileSetAtlasSource_lc2xo")
+sources/3 = SubResource("TileSetAtlasSource_80cx4")
+sources/4 = SubResource("TileSetAtlasSource_e8heu")
+pattern_0 = SubResource("TileMapPattern_hve3p")
+pattern_1 = SubResource("TileMapPattern_mfdv2")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvswv"]
+texture = ExtResource("14_7sc4i")
+texture_region_size = Vector2i(284, 426)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+7:1/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+8:1/0 = 0
+8:2/0 = 0
+7:2/0 = 0
+6:2/0 = 0
+5:2/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_boyg6"]
+tile_size = Vector2i(142, 142)
+sources/0 = SubResource("TileSetAtlasSource_rvswv")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ryrav")
@@ -599,6 +716,7 @@ position = Vector2(1897.5, 954)
 shape = SubResource("RectangleShape2D_ryrav")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ForestLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = 3
@@ -748,7 +866,7 @@ texture = SubResource("NoiseTexture2D_lc2xo")
 visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_215e1")
-position = Vector2(924, 1287)
+position = Vector2(1420, 359)
 scale = Vector2(10, 10)
 texture = ExtResource("10_mfdv2")
 
@@ -777,6 +895,53 @@ texture = SubResource("AtlasTexture_215e1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Spikes2/DamageArea2D"]
 position = Vector2(1.5, 6)
 shape = SubResource("RectangleShape2D_7sc4i")
+
+[node name="ParallaxBackgroundNew" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackgroundNew"]
+motion_scale = Vector2(0.2, 1)
+script = ExtResource("9_iotsf")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="ParallaxBackgroundNew/ParallaxLayer"]
+position = Vector2(0, 384)
+tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAD7/wAAAAACAAAAAAD8/wAAAAACAAAAAAD9/wAAAAACAAAAAAD+/wAAAAACAAAAAAD//wAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAIAAAAAAACAAAAAAAJAAAAAAACAAAAAAAKAAAAAAACAAAAAAALAAAAAAACAAAAAAALAAEAAAACAAAAAAAKAAEAAAACAAAAAAAJAAEAAAACAAAAAAAIAAEAAAACAAAAAAAHAAEAAAACAAAAAAAGAAEAAAACAAAAAAAFAAEAAAACAAAAAAAEAAEAAAACAAAAAAADAAEAAAACAAAAAAACAAEAAAACAAAAAAABAAEAAAACAAAAAAAAAAEAAAACAAAAAAD//wEAAAACAAAAAAD+/wEAAAACAAAAAAD9/wEAAAACAAAAAAD8/wEAAAACAAAAAAD7/wEAAAACAAAAAAD7/wIAAAACAAAAAAD8/wIAAAACAAAAAAD9/wIAAAACAAAAAAD+/wIAAAACAAAAAAD//wIAAAACAAAAAAAAAAIAAAACAAAAAAABAAIAAAACAAAAAAACAAIAAAACAAAAAAADAAIAAAACAAAAAAAEAAIAAAACAAAAAAAFAAIAAAACAAAAAAAGAAIAAAACAAAAAAAHAAIAAAACAAAAAAAIAAIAAAACAAAAAAAJAAIAAAACAAAAAAAKAAIAAAACAAAAAAALAAIAAAACAAAAAAAMAAAAAAACAAAAAAANAAAAAAACAAAAAAAOAAAAAAACAAAAAAAPAAAAAAACAAAAAAAQAAAAAAACAAAAAAARAAAAAAACAAAAAAASAAAAAAACAAAAAAATAAAAAAACAAAAAAAUAAAAAAACAAAAAAAVAAAAAAACAAAAAAAWAAAAAAACAAAAAAAVAAEAAAACAAAAAAAVAAIAAAACAAAAAAAUAAIAAAACAAAAAAATAAIAAAACAAAAAAASAAIAAAACAAAAAAARAAIAAAACAAAAAAAQAAIAAAACAAAAAAAPAAIAAAACAAAAAAAOAAIAAAACAAAAAAANAAIAAAACAAAAAAAMAAIAAAACAAAAAAAMAAEAAAACAAAAAAANAAEAAAACAAAAAAAOAAEAAAACAAAAAAAPAAEAAAACAAAAAAAQAAEAAAACAAAAAAARAAEAAAACAAAAAAASAAEAAAACAAAAAAATAAEAAAACAAAAAAAUAAEAAAACAAAAAAAAAP//AAAAAAAAAAABAP//AAABAAAAAAABAP7/AAABAAEAAAAAAP7/AAAAAAEAAAADAP//AAAAAAEAAAAEAP//AAABAAEAAAAGAP7/AAAAAAEAAAAHAP7/AAABAAEAAAACAP7/AAAAAAIAAAADAP7/AAABAAIAAAAFAP7/AAABAAAAAAAEAP7/AAAAAAAAAAACAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP7/AAAAAAIAAAAJAP7/AAABAAIAAAAMAP7/AAAAAAIAAAANAP7/AAABAAIAAAAPAP//AAAAAAEAAAAQAP//AAABAAEAAAAQAP7/AAAAAAIAAAARAP7/AAABAAIAAAANAP//AAABAAAAAAAKAP7/AAABAAAAAAALAP7/AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAAOAP//AAAAAAAAAAAOAP7/AAAAAAAAAAAPAP7/AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAXAP//AAAAAAAAAAASAP7/AAAAAAAAAAATAP7/AAAAAAAAAAAUAP7/AAAAAAEAAAAVAP7/AAABAAEAAAAWAP7/AAABAAAAAAAXAP7/AAABAAAAAAAYAP7/AAAAAAIAAAAZAP7/AAABAAIAAAAYAP//AAAAAAAAAAAZAP//AAAAAAAAAAAaAP7/AAAAAAAAAAAaAP//AAAAAAAAAAAbAP7/AAAAAAIAAAAbAP//AAAAAAAAAAAcAP7/AAABAAIAAAAcAP//AAABAAAAAAAdAP7/AAAAAAAAAAAdAP//AAAAAAAAAAAeAP7/AAAAAAAAAAAeAP//AAAAAAEAAAAfAP7/AAAAAAIAAAAfAP//AAABAAEAAAAgAP7/AAABAAIAAAAgAP//AAAAAAAAAAAWAAEAAAACAAAAAAAWAAIAAAACAAAAAAAXAAAAAAACAAAAAAAXAAEAAAACAAAAAAAXAAIAAAACAAAAAAAYAAAAAAACAAAAAAAYAAEAAAACAAAAAAAYAAIAAAACAAAAAAAZAAAAAAACAAAAAAAZAAEAAAACAAAAAAAZAAIAAAACAAAAAAAaAAAAAAACAAAAAAAaAAEAAAACAAAAAAAaAAIAAAACAAAAAAAbAAAAAAACAAAAAAAbAAEAAAACAAAAAAAbAAIAAAACAAAAAAAcAAAAAAACAAAAAAAcAAEAAAACAAAAAAAcAAIAAAACAAAAAAAdAAAAAAACAAAAAAAdAAEAAAACAAAAAAAdAAIAAAACAAAAAAAeAAAAAAACAAAAAAAeAAEAAAACAAAAAAAeAAIAAAACAAAAAAAfAAAAAAACAAAAAAAfAAEAAAACAAAAAAAfAAIAAAACAAAAAAAgAAAAAAACAAAAAAAgAAEAAAACAAAAAAAgAAIAAAACAAAAAAD7//7/AAAAAAEAAAD7////AAAAAAAAAAD8//7/AAABAAEAAAD8////AAABAAAAAAD9//7/AAAAAAIAAAD9////AAAAAAAAAAD+//7/AAABAAIAAAD+////AAAAAAEAAAD///7/AAAAAAAAAAD/////AAABAAEAAAA=")
+tile_set = SubResource("TileSet_lc2xo")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackgroundNew"]
+position = Vector2(0, 216)
+motion_scale = Vector2(0.4, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="ParallaxBackgroundNew/ParallaxLayer2"]
+position = Vector2(0, 384)
+tile_map_data = PackedByteArray("AAABAP//AQAAAAAAAAD+////AQAAAAAAAAD7////AQAAAAAAAAAEAP//AQAAAAAAAAAHAP//AQAAAAAAAAAKAP//AQAAAAAAAAANAP//AQAAAAAAAAAQAP//AQAAAAAAAAATAP//AQAAAAAAAAAWAP//AQAAAAAAAAAZAP//AQAAAAAAAAAcAP//AQAAAAAAAAAfAP//AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_lc2xo")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackgroundNew"]
+position = Vector2(0, 16)
+motion_scale = Vector2(0.6, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="ParallaxBackgroundNew/ParallaxLayer3"]
+position = Vector2(0, 384)
+tile_map_data = PackedByteArray("AAABAP//AgACAAAAAAAEAP//AgABAAAAAAAGAP//AgAAAAAAAAAHAP//AgACAAAAAAAOAP//AgACAAAAAAARAP//AgACAAAAAAAVAP//AgABAAAAAAAMAP//AgABAAAAAAAWAP//AgAAAAAAAAAaAP//AgAAAAAAAAAbAP//AgACAAAAAAAfAP//AgABAAAAAAA=")
+tile_set = SubResource("TileSet_lc2xo")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackgroundNew"]
+position = Vector2(0, 216)
+motion_scale = Vector2(0.8, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="ParallaxBackgroundNew/ParallaxLayer4"]
+position = Vector2(0, 384)
+tile_map_data = PackedByteArray("AAABAP//AwAAAAAAAAAEAP//AwAAAAEAAAAHAP//AwAAAAEAAAAKAP//AwAAAAAAAAANAP//AwAAAAAAAAAQAP//AwAAAAEAAAATAP//AwAAAAAAAAAWAP//AwAAAAEAAAAZAP//AwAAAAAAAAAcAP//AwAAAAAAAAAfAP//AwAAAAEAAAD+////AwAAAAAAAAD7////AwAAAAAAAAA=")
+tile_set = SubResource("TileSet_lc2xo")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackgroundNew"]
+position = Vector2(0, 176)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="ParallaxBackgroundNew/ParallaxLayer5"]
+unique_name_in_owner = true
+position = Vector2(0, 384)
+tile_map_data = PackedByteArray("AAAFAP3/AAABAAAAAAAGAP3/AAADAAAAAAARAP3/AAADAAAAAAASAP3/AAAFAAAAAAAYAP7/AAAIAAAAAAAQAP7/AAAIAAAAAAAKAP3/AAABAAEAAAAnAP3/AAAEAAEAAAA1AP3/AAAEAAEAAAA7AP3/AAAFAAIAAAA+AP3/AAABAAIAAABmAP7/AAAIAAAAAABeAP3/AAAIAAAAAABRAP3/AAACAAAAAABCAP3/AAAHAAAAAABEAP3/AAAGAAAAAAB0AP3/AAAHAAEAAAB5AP3/AAAHAAEAAACAAP//AAAFAAEAAABoAAEAAAAFAAEAAABsAAEAAAABAAEAAAB1AAEAAAABAAEAAAB7AAEAAAADAAEAAACCAP3/AAADAAEAAABuAP3/AAADAAEAAACDAP//AAAIAAAAAACRAP3/AAADAAAAAACWAPz/AAACAAAAAACuAPz/AAAGAAAAAABLAP3/AAADAAAAAABfAP3/AAAHAAAAAAA=")
+tile_set = SubResource("TileSet_boyg6")
 
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Coins/Coin/CoinArea" to="Player" method="_on_coin_entered"]
