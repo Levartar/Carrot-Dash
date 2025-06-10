@@ -10,7 +10,7 @@ const gravity = 48
 const glide_gravity = 1
 const speed = 600
 const minSpeed = 400
-const maxSpeed = 800
+const maxSpeed = 750
 const acceleration = 10
 const jump_force = -1400
 const GLIDE_HOLD_THRESHOLD = 0.5
@@ -112,7 +112,6 @@ func _physics_process(delta: float) -> void:
 		if velocity.x < minSpeed:
 			velocity.x = minSpeed
 	else:
-		print(velocity.x)
 		velocity.y += gravity
 		#Autoaccelerate Speed better to do this in visible stages
 		if velocity.x < minSpeed:

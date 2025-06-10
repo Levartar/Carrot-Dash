@@ -589,7 +589,7 @@ tile_data = PackedInt32Array(0, 0, 1, 1, 65536, 1)
 [sub_resource type="TileMapPattern" id="TileMapPattern_mfdv2"]
 tile_data = PackedInt32Array(0, 0, 2, 1, 65536, 2)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iotsf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_215e1"]
 texture = ExtResource("9_vef74")
 texture_region_size = Vector2i(852, 852)
 2:0/0 = 0
@@ -600,25 +600,25 @@ texture_region_size = Vector2i(852, 852)
 1:2/0 = 0
 0:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfdv2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sc4i"]
 texture = ExtResource("10_hve3p")
 texture_region_size = Vector2i(2556, 426)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc2xo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80cx4"]
 texture = ExtResource("11_mfdv2")
 texture_region_size = Vector2i(852, 852)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80cx4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e8heu"]
 texture = ExtResource("13_215e1")
 texture_region_size = Vector2i(2556, 426)
 0:0/0 = 0
 0:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e8heu"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvswv"]
 texture = ExtResource("14_7sc4i")
 texture_region_size = Vector2i(284, 426)
 0:0/0 = 0
@@ -651,15 +651,15 @@ texture_region_size = Vector2i(284, 426)
 
 [sub_resource type="TileSet" id="TileSet_lc2xo"]
 tile_size = Vector2i(852, 852)
-sources/1 = SubResource("TileSetAtlasSource_mfdv2")
-sources/0 = SubResource("TileSetAtlasSource_iotsf")
-sources/2 = SubResource("TileSetAtlasSource_lc2xo")
-sources/3 = SubResource("TileSetAtlasSource_80cx4")
-sources/4 = SubResource("TileSetAtlasSource_e8heu")
+sources/1 = SubResource("TileSetAtlasSource_7sc4i")
+sources/0 = SubResource("TileSetAtlasSource_215e1")
+sources/2 = SubResource("TileSetAtlasSource_80cx4")
+sources/3 = SubResource("TileSetAtlasSource_e8heu")
+sources/4 = SubResource("TileSetAtlasSource_rvswv")
 pattern_0 = SubResource("TileMapPattern_hve3p")
 pattern_1 = SubResource("TileMapPattern_mfdv2")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvswv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_boyg6"]
 texture = ExtResource("14_7sc4i")
 texture_region_size = Vector2i(284, 426)
 0:0/0 = 0
@@ -692,7 +692,7 @@ texture_region_size = Vector2i(284, 426)
 
 [sub_resource type="TileSet" id="TileSet_boyg6"]
 tile_size = Vector2i(142, 142)
-sources/0 = SubResource("TileSetAtlasSource_rvswv")
+sources/0 = SubResource("TileSetAtlasSource_boyg6")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ryrav")
