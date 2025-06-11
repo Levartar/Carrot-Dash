@@ -10,11 +10,11 @@ const gravity = 48
 const glide_gravity = 1
 const speed = 600
 const minSpeed = 400
-const maxSpeed = 750
+const maxSpeed = 775
 const acceleration = 10
 const jump_force = -1400
 const GLIDE_HOLD_THRESHOLD = 0.5
-const glide_decceleration = 6
+const glide_decceleration = 5
 const slide_height := 120
 const slide_boost = 50
 const slide_duration = 0.5
@@ -80,6 +80,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			#On release
 			gliding = false
+
 	
 	if Input.is_action_just_pressed("slide") and is_on_floor() and not sliding:
 		sliding = true
