@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://d20ag7m08uis4"]
+
+[ext_resource type="Script" uid="uid://dt6fnaalnf3bx" path="res://scripts/coin.gd" id="1_0t63x"]
+[ext_resource type="Texture2D" uid="uid://cciywvojpx68m" path="res://assets/Spritesheets/01_Coins_125x125.png" id="2_0t63x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7riw"]
+atlas = ExtResource("2_0t63x")
+region = Rect2(0, 0, 125, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eow3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7riw")
+}],
+"loop": true,
+"name": &"cointurn",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(100, 100)
+
+[node name="Coin" type="Node2D"]
+script = ExtResource("1_0t63x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eow3j")
+animation = &"cointurn"
+autoplay = "cointurn"
+
+[node name="CoinArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoinArea"]
+shape = SubResource("RectangleShape2D_eow3j")
+
+[connection signal="body_entered" from="CoinArea" to="." method="_on_coin_area_body_entered"]

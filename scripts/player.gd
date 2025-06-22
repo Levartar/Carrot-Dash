@@ -15,7 +15,7 @@ const acceleration = 10
 const jump_force = -1400
 const GLIDE_HOLD_THRESHOLD = 0.5
 const glide_decceleration = 5
-const slide_height := 120
+const slide_height := 100
 const slide_boost = 50
 const slide_duration = 0.5
 const invuln_duration = 3.0
@@ -29,6 +29,7 @@ var slide_timer = 0.0
 var particle_amount = 0
 var invuln_timer = 0.0
 var damage_timer = 0.0
+var last_safe_position: Vector2
 
 
 var coins = 0 
@@ -59,6 +60,7 @@ func _physics_process(delta: float) -> void:
 		jumping = false
 		gliding = false
 		jump_held_time = 0.0
+		last_safe_position = global_position+Vector2(-250,0)
 		
 	# Handle Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -135,11 +137,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		get_tree().reload_current_scene()
 
 
-func _on_coin_entered(body: Node2D) -> void:
-	if body.name == "Player":  # or check for group, or class_name
-		coins += 1
-		var coin_digits = $Game_Hud/CanvasLayer/CoinContainer/CoinDigits
-		coin_digits.set_value(coins)
+func _on_coin_entered() -> void:
+	coins += 1
+	var coin_digits = $Game_Hud/CanvasLayer/CoinContainer/CoinDigits
+	coin_digits.set_value(coins)
 
 #Take Damage
 func _on_damage_area_2d_body_entered(body: Node2D) -> void:

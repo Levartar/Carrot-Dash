@@ -17,7 +17,7 @@ void vertex() {
 
 void fragment() {
 	vec4 noise_col = texture(noise,UV + scroll * TIME);
-	float depth =  texture(noise, UV + scroll * TIME).r 
+	float depth =  texture(noise, UV + scroll * TIME).r
 		* texture(noise2, UV + scroll2 * TIME).r;
 	vec4 screen_col = texture(screen_texture,UV + distortion_strength * noise_col.rr);
 	vec4 top_light = smoothstep(light_start,light_end, depth) * top_color;

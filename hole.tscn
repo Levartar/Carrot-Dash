@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj4iarn8lpml8"]
+
+[ext_resource type="Script" uid="uid://rjqk8oct70ch" path="res://scripts/hole.gd" id="1_ln22a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s0jb"]
+size = Vector2(125, 30)
+
+[sub_resource type="Gradient" id="Gradient_cki6r"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aqv4r"]
+gradient = SubResource("Gradient_cki6r")
+
+[node name="hole" type="Node2D"]
+
+[node name="DamageArea2D" type="Area2D" parent="."]
+position = Vector2(0, 40)
+script = ExtResource("1_ln22a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea2D"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_1s0jb")
+
+[node name="Sprite2D" type="Sprite2D" parent="DamageArea2D"]
+position = Vector2(2.14713e-06, -56.8794)
+rotation = -1.5708
+scale = Vector2(0.616246, 125)
+texture = SubResource("GradientTexture1D_aqv4r")
+
+[node name="Respawn" type="Marker2D" parent="DamageArea2D"]
+position = Vector2(0, -600)
+gizmo_extents = 50.0
+
+[connection signal="body_entered" from="DamageArea2D" to="DamageArea2D" method="_on_body_entered"]

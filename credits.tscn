@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://db2sqv7egsf7g"]
+
+[ext_resource type="Script" uid="uid://b7erdax00qyxc" path="res://controls.gd" id="1_pjc1l"]
+[ext_resource type="Texture2D" uid="uid://uadv3uar6vs" path="res://assets/Spritesheets/Enemies/03_Enemies_Schimmel_3_150x150.png" id="2_4av4j"]
+[ext_resource type="Texture2D" uid="uid://bowp4jeko1v3k" path="res://assets/kenney_ui-pack/PNG/Green/Double/check_square_color_cross.png" id="3_4av4j"]
+[ext_resource type="Texture2D" uid="uid://dx6spj0gx4p5e" path="res://assets/Spritesheets/Enemies/02_Enemies_Schimmel_2_150x150.png" id="3_5em78"]
+[ext_resource type="FontFile" uid="uid://owl0bsmrjwgi" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="4_5em78"]
+[ext_resource type="Texture2D" uid="uid://ciqbjtghr3rve" path="res://assets/Spritesheets/Enemies/01_Enemies_Schimmel_1_150x150.png" id="4_h30m1"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pjc1l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(728, 376)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_4av4j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(904, 312)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_5em78")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(680, 528)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_h30m1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(959.5, 479.55)
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 88.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_4av4j")
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_5em78")
+text = "Back"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 320.0
+offset_top = 144.0
+offset_right = 531.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_5em78")
+text = "Iba: Programming
+Samira: Art
+Lena: Art
+Lukas: Game Design"
+
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
