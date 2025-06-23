@@ -14,13 +14,13 @@ void fragment( )
 	vec2 shifted_uv = UV+vec2(0.01, 0.0);
 	float pixelAlpha = textureLod(TEXTURE,shifted_uv,blur).a;
 	float noiseAlpha = textureLod(noise_tex,shifted_uv,blur).a;
-	
+
 	//vec2 noise_uv = UV * noiseScale+TIME*scroll;
 	float pattern_intensity = texture(noise_tex,UV).r;
 	float intensity = noiseAlpha*pattern_intensity;
-	
+
 	vec4 fireColor = texture(TONE_MAPPING, vec2(intensity));
-	
+
 	COLOR = fireColor;
 	COLOR.a *= pixelAlpha;
 }

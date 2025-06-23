@@ -1,15 +1,20 @@
 extends Node2D
 
+
+@onready var player:Player = get_node("/root/Game/Player")
 const speed = 700
 var current_speed = speed
 
 func _process(delta):
 	#Mold doesnt fall back
-	var pos = get_node("/root/Game/Player").position.x-1000
-	if pos>position.x:
-		position.x = pos
+	if !player.stop:
+		var pos = player.position.x-1000
+		if pos>position.x:
+			position.x = pos
+		else:
+			position.x += current_speed * delta
 	else:
-		position.x += current_speed * delta
+		$Particles.toggle_particles()
 	
 func speed_wall():
 	print("wallboost")
@@ -18,11 +23,11 @@ func speed_wall():
 	current_speed = speed
 	
 func slow_wall():
-	print("wallboost")
 	current_speed = 200
 	await get_tree().create_timer(2.0).timeout
 	current_speed = speed
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		print("loose Game")
+		body.loose_game(body)
+		print("moldloose")

@@ -24,6 +24,7 @@ var jumping = false
 var gliding = false
 var sliding = false
 var invulnerable = false
+var stop = false
 var jump_held_time = 0.0
 var slide_timer = 0.0
 var particle_amount = 0
@@ -38,12 +39,15 @@ var coins = 0
 #func _init() -> void:
 #	time_running_without_obstacle = get_unix_time_from_system()
 
+func _ready() -> void:
+	$AnimationPlayer.stop()
+
 func _physics_process(delta: float) -> void:
 
 	#Update Hud
 	var speed_digits = $Game_Hud/CanvasLayer/SpeedContainer/SpeedDigits
 	speed_digits.set_value(int(velocity.x))
-	
+
 	if sliding:
 		$AnimatedSprite2D.play("slide")
 	elif !jumping and !gliding:
@@ -127,15 +131,14 @@ func _physics_process(delta: float) -> void:
 	#$FireParticles.scale_amount_max = desired_scale
 	#$FireParticles.scale_amount_min = desired_scale
 
-			
-	move_and_slide()
+	if !stop:
+		move_and_slide()
 
 
 #Loose Condition
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":  # or check for group, or class_name
 		get_tree().reload_current_scene()
-
 
 func _on_coin_entered() -> void:
 	coins += 1
@@ -151,3 +154,26 @@ func _on_damage_area_2d_body_entered(body: Node2D) -> void:
 		invuln_timer = invuln_duration
 		damage_timer = 0.5
 		invulnerable = true
+		
+func update_mask_center():
+	var viewport_size = get_viewport().get_visible_rect().size
+	var player_screen_pos = get_global_position()
+	var center_uv = player_screen_pos / viewport_size
+	$Game_Hud/CanvasLayer/ColorRect.material.set_shader_parameter("center", center_uv)
+
+		
+#Loose Condition
+func loose_game(body: Node2D) -> void:
+	if body.name == "Player":  # or check for group, or class_name
+		var hud = body.get_child(3) #4 is hud
+		hud.show_game_over()
+		body.set_process(false)
+
+func win_game(color: String):
+	stop = true
+	$Game_Hud.play_outro()
+	await get_tree().create_timer(2.0).timeout
+	print("Win Game")
+	var packed_scene  = load("res://win_screen.tscn")
+	var win_screen = packed_scene.instantiate()
+	get_tree().change_scene_to_packed(packed_scene)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b53hx37tj6d0d"]
+[gd_scene load_steps=11 format=3 uid="uid://b53hx37tj6d0d"]
 
 [ext_resource type="Script" uid="uid://04cfvy5khkie" path="res://scripts/level_select.gd" id="1_0y2nu"]
 [ext_resource type="Texture2D" uid="uid://l7bwm0tapelq" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_square_depth_flat.png" id="1_1tid8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://hfrdn0e2o8ol" path="res://assets/kenney_ui-pack/PNG/Green/Double/star.png" id="5_8c03b"]
 [ext_resource type="Texture2D" uid="uid://3pxeuraj6ft0" path="res://assets/kenney_ui-pack/PNG/Green/Double/star_outline.png" id="6_qyhfl"]
 [ext_resource type="Texture2D" uid="uid://bowp4jeko1v3k" path="res://assets/kenney_ui-pack/PNG/Green/Double/check_square_color_cross.png" id="8_8c03b"]
+[ext_resource type="Texture2D" uid="uid://dpb5puncvspou" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_square_line.png" id="8_a1o6p"]
 [ext_resource type="FontFile" uid="uid://owl0bsmrjwgi" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="9_a1o6p"]
 
 [node name="Control" type="Control"]
@@ -80,9 +81,11 @@ texture = ExtResource("5_8c03b")
 
 [node name="Level2" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("1_1tid8")
 texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
+texture_disabled = ExtResource("8_a1o6p")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Level2"]
 layout_mode = 1
@@ -112,9 +115,11 @@ texture = ExtResource("5_8c03b")
 
 [node name="Level3" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("1_1tid8")
 texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
+texture_disabled = ExtResource("8_a1o6p")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Level3"]
 layout_mode = 1
@@ -148,9 +153,11 @@ theme_override_constants/separation = 40
 
 [node name="Level1" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("1_1tid8")
 texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
+texture_disabled = ExtResource("8_a1o6p")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/Level1"]
 layout_mode = 1
@@ -180,9 +187,11 @@ texture = ExtResource("5_8c03b")
 
 [node name="Level2" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("1_1tid8")
 texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
+texture_disabled = ExtResource("8_a1o6p")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/Level2"]
 layout_mode = 1
@@ -212,9 +221,11 @@ texture = ExtResource("5_8c03b")
 
 [node name="Level3" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("1_1tid8")
 texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
+texture_disabled = ExtResource("8_a1o6p")
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/Level3"]
 layout_mode = 1

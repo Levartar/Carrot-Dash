@@ -1,9 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://hbt7t6bofq2k"]
+[gd_scene load_steps=12 format=3 uid="uid://hbt7t6bofq2k"]
 
 [ext_resource type="Script" uid="uid://ckieqkexbk7d6" path="res://scripts/digitDisplay.gd" id="1_q4g6c"]
 [ext_resource type="Script" uid="uid://bimtrw5n2yl11" path="res://scripts/game_hud.gd" id="1_vpmjm"]
 [ext_resource type="Texture2D" uid="uid://cciywvojpx68m" path="res://assets/Spritesheets/01_Coins_125x125.png" id="2_2uf8q"]
 [ext_resource type="SpriteFrames" uid="uid://c6o1o0qxkggt0" path="res://assets/digit_frames.tres" id="4_2uf8q"]
+[ext_resource type="Shader" uid="uid://bwqt4x26wjwaf" path="res://circle_mask.gdshader" id="5_gsa5p"]
+[ext_resource type="FontFile" uid="uid://owl0bsmrjwgi" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="5_kllk0"]
+[ext_resource type="Texture2D" uid="uid://cqggj68pyau4" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_flat.png" id="6_gsa5p"]
+[ext_resource type="Texture2D" uid="uid://cjycghgwm710w" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_rectangle_flat.png" id="7_6k4gu"]
+[ext_resource type="Texture2D" uid="uid://do4age7s5o4gi" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_gloss.png" id="8_wh55g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6k4gu"]
+shader = ExtResource("5_gsa5p")
+shader_parameter/center = Vector2(0.34, 0.5)
+shader_parameter/radius = 0.0
+shader_parameter/softness = 0.05
+shader_parameter/mask_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kllk0"]
+size = Vector2(100, 100)
 
 [node name="Game_Hud" type="Control"]
 layout_mode = 3
@@ -16,12 +31,11 @@ script = ExtResource("1_vpmjm")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
-scale = Vector2(0.5, 0.5)
-transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="CoinContainer" type="HBoxContainer" parent="CanvasLayer"]
 offset_right = 132.0
 offset_bottom = 128.0
+scale = Vector2(0.5, 0.5)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/CoinContainer"]
 layout_mode = 2
@@ -48,13 +62,13 @@ sprite_frames = ExtResource("4_2uf8q")
 animation = &"digits"
 
 [node name="SpeedContainer" type="HBoxContainer" parent="CanvasLayer"]
-z_index = 1000
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 592.0
-offset_right = 592.0
+offset_left = -136.0
+offset_right = 136.0
 grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 
 [node name="SpeedDigits" type="HBoxContainer" parent="CanvasLayer/SpeedContainer"]
@@ -76,3 +90,103 @@ animation = &"digits"
 position = Vector2(214, 64)
 sprite_frames = ExtResource("4_2uf8q")
 animation = &"digits"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 19
+material = SubResource("ShaderMaterial_6k4gu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+z_index = 20
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_kllk0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = -184.0
+offset_right = 231.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_kllk0")
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+
+[node name="Retry" type="TextureButton" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_gsa5p")
+texture_pressed = ExtResource("7_6k4gu")
+texture_hover = ExtResource("8_wh55g")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Retry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -20.0
+offset_right = 141.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_kllk0")
+theme_override_font_sizes/font_size = 35
+text = "Retry"
+horizontal_alignment = 1
+
+[node name="BackToMenu" type="TextureButton" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_gsa5p")
+texture_pressed = ExtResource("7_6k4gu")
+texture_hover = ExtResource("8_wh55g")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/BackToMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -20.0
+offset_right = 141.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_kllk0")
+theme_override_font_sizes/font_size = 35
+text = "Back to Menu"
+
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/BackToMenu" to="." method="_on_back_to_menu_pressed"]
