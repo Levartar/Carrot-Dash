@@ -10,5 +10,5 @@ func _on_back_pressed() -> void:
 
 
 func _on_level_1_pressed() -> void:
-	var scene = load("res://game.tscn")
+	var scene = load("res://level1_flat_newTiles.tscn")
 	get_tree().change_scene_to_packed(scene)
