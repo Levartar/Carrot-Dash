@@ -21,6 +21,18 @@ position = Vector2(728, 376)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_4av4j")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 480.0
+offset_top = 240.0
+offset_right = 480.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(904, 312)
 scale = Vector2(0.7, 0.7)
