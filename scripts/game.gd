@@ -4,6 +4,9 @@ extends Node2D
 
 func _ready():
 	_on_hud_ready()
+	var name = scene_file_path
+	print(name)
+	player.current_level = int(scene_file_path.split("level")[2].left(1))
 
 func _on_hud_ready():
 	var coin_digits = $Player/Game_Hud/CanvasLayer/CoinContainer/CoinDigits

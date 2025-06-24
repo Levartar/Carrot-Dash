@@ -32,8 +32,8 @@ var invuln_timer = 0.0
 var damage_timer = 0.0
 var last_safe_position: Vector2
 
-
 var coins = 0 
+var current_level = 0
 #var time_running_without_obstacle
 
 #func _init() -> void:
@@ -44,7 +44,6 @@ func _ready() -> void:
 	$AnimationPlayer.reset_section()
 
 func _physics_process(delta: float) -> void:
-
 	#Update Hud
 	var speed_digits = $Game_Hud/CanvasLayer/SpeedContainer/SpeedDigits
 	speed_digits.set_value(int(velocity.x))
@@ -177,6 +176,7 @@ func win_game(color: String):
 	print("Win Game")
 	print("Is inside tree?", is_inside_tree())
 	SaveGame.save_data.saved_friends += 1
+	SaveGame.save_data.completed_levels.append(current_level)
 	SaveGame.save_game()
 	get_tree().change_scene_to_file("res://win_screen.tscn")
 	#var packed_scene  = load("res://win_screen.tscn")

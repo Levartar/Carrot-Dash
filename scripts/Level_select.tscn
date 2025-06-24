@@ -83,7 +83,7 @@ position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level1"]
+[node name="Star1" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level1"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
@@ -117,7 +117,7 @@ position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2"]
+[node name="Star2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
@@ -151,7 +151,7 @@ position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3"]
+[node name="Star3" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
@@ -189,7 +189,7 @@ position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level1"]
+[node name="Star4" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level1"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
@@ -223,7 +223,7 @@ position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level2"]
+[node name="Star5" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level2"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
@@ -257,7 +257,7 @@ position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level3"]
+[node name="Star6" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level3"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
