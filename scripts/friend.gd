@@ -8,9 +8,9 @@ func _ready() -> void:
 	color = colorArray[randi()%3]
 	sad_color(color)
 	var win_screen = get_node("/root/WinScreen")
-	if win_screen:
-		print("winscreen")
-		happy_color(win_screen.friendColor)
+	var lvl_select = get_node("/root/LevelSelect")
+	if win_screen||lvl_select:
+		happy_color(color)  
 
 func sad_color(color: String) -> void:
 	anim_player.play("sad_"+color)

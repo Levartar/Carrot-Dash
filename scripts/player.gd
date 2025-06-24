@@ -41,6 +41,7 @@ var coins = 0
 
 func _ready() -> void:
 	$AnimationPlayer.stop()
+	$AnimationPlayer.reset_section()
 
 func _physics_process(delta: float) -> void:
 
@@ -174,6 +175,9 @@ func win_game(color: String):
 	$Game_Hud.play_outro()
 	await get_tree().create_timer(2.0).timeout
 	print("Win Game")
-	var packed_scene  = load("res://win_screen.tscn")
-	var win_screen = packed_scene.instantiate()
-	get_tree().change_scene_to_packed(packed_scene)
+	print("Is inside tree?", is_inside_tree())
+	SaveGame.save_data.saved_friends += 1
+	SaveGame.save_game()
+	get_tree().change_scene_to_file("res://win_screen.tscn")
+	#var packed_scene  = load("res://win_screen.tscn")
+	#get_tree().change_scene_to_packed(packed_scene)

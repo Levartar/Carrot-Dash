@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bbmlwvy1qgxmw"]
 
-[ext_resource type="PackedScene" uid="uid://cejlkc1oe1xq" path="res://friend.tscn" id="1_l2arl"]
-[ext_resource type="Script" uid="uid://bwd37sgc6vdtq" path="res://win_screen.gd" id="1_luvg0"]
+[ext_resource type="PackedScene" uid="uid://cejlkc1oe1xq" path="res://objects/friend.tscn" id="1_l2arl"]
+[ext_resource type="Script" uid="uid://bwd37sgc6vdtq" path="res://scripts/win_screen.gd" id="1_luvg0"]
 [ext_resource type="FontFile" uid="uid://owl0bsmrjwgi" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="1_wmwda"]
 [ext_resource type="Texture2D" uid="uid://cqggj68pyau4" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_flat.png" id="3_26557"]
 [ext_resource type="Texture2D" uid="uid://cjycghgwm710w" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_rectangle_flat.png" id="4_luvg0"]

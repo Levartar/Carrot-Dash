@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgbds2h1qhcui"]
 
 [ext_resource type="Texture2D" uid="uid://b73eml5lm0wkh" path="res://assets/Controls.png" id="1_gpdjo"]
-[ext_resource type="Script" uid="uid://b7erdax00qyxc" path="res://controls.gd" id="1_qo8cm"]
+[ext_resource type="Script" uid="uid://b7erdax00qyxc" path="res://scripts/controls.gd" id="1_qo8cm"]
 [ext_resource type="Texture2D" uid="uid://bowp4jeko1v3k" path="res://assets/kenney_ui-pack/PNG/Green/Double/check_square_color_cross.png" id="3_ff64o"]
 [ext_resource type="FontFile" uid="uid://owl0bsmrjwgi" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="4_kxvun"]
 

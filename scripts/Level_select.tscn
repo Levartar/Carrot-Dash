@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dpb5puncvspou" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_square_line.png" id="8_a1o6p"]
 [ext_resource type="FontFile" uid="uid://owl0bsmrjwgi" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="9_a1o6p"]
 
-[node name="Control" type="Control"]
+[node name="LevelSelect" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,32 +28,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -232.0
+offset_top = -158.0
+offset_right = 232.0
+offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Spawnzone1" type="Control" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="LevelsContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
 theme_override_constants/separation = 60
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/LevelsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Level1" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="Level1" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_1tid8")
 texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Level1"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level1"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -69,17 +78,17 @@ theme_override_fonts/font = ExtResource("4_v14ah")
 text = "Level 1
 "
 
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/Level1"]
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level1"]
 position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/Level1"]
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level1"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
 
-[node name="Level2" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="Level2" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer"]
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("1_1tid8")
@@ -87,7 +96,7 @@ texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
 texture_disabled = ExtResource("8_a1o6p")
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Level2"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -103,17 +112,17 @@ theme_override_fonts/font = ExtResource("4_v14ah")
 text = "Level 2
 "
 
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/Level2"]
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2"]
 position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/Level2"]
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
 
-[node name="Level3" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="Level3" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer"]
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("1_1tid8")
@@ -121,7 +130,7 @@ texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
 texture_disabled = ExtResource("8_a1o6p")
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Level3"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -137,21 +146,21 @@ theme_override_fonts/font = ExtResource("4_v14ah")
 text = "Level 3
 "
 
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/Level3"]
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3"]
 position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer/Level3"]
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/HBoxContainer/LevelsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Level1" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="Level1" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2"]
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("1_1tid8")
@@ -159,7 +168,7 @@ texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
 texture_disabled = ExtResource("8_a1o6p")
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/Level1"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level1"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -175,17 +184,17 @@ theme_override_fonts/font = ExtResource("4_v14ah")
 text = "Level 4
 "
 
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer2/Level1"]
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level1"]
 position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer2/Level1"]
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level1"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
 
-[node name="Level2" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="Level2" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2"]
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("1_1tid8")
@@ -193,7 +202,7 @@ texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
 texture_disabled = ExtResource("8_a1o6p")
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/Level2"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level2"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -209,17 +218,17 @@ theme_override_fonts/font = ExtResource("4_v14ah")
 text = "Level 5
 "
 
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer2/Level2"]
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level2"]
 position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer2/Level2"]
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level2"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
 
-[node name="Level3" type="TextureButton" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="Level3" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2"]
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("1_1tid8")
@@ -227,7 +236,7 @@ texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
 texture_disabled = ExtResource("8_a1o6p")
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/Level3"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level3"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -243,15 +252,19 @@ theme_override_fonts/font = ExtResource("4_v14ah")
 text = "Level 6
 "
 
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer2/Level3"]
+[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level3"]
 position = Vector2(64, 48)
 scale = Vector2(0.57, 0.57)
 texture = ExtResource("6_qyhfl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/VBoxContainer/HBoxContainer2/Level3"]
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level3"]
 position = Vector2(64, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_8c03b")
+
+[node name="Spawnzone2" type="Control" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -277,10 +290,10 @@ theme_override_fonts/font = ExtResource("9_a1o6p")
 text = "Back"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Level2" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Level3" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer2/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer2/Level2" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer2/Level3" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level2" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level3" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

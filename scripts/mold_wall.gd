@@ -2,14 +2,19 @@ extends Node2D
 
 
 @onready var player:Player = get_node("/root/Game/Player")
-const speed = 700
+@onready var dynamic_wall = SaveGame.save_data.config.wall_dynamic
+var speed = 700
 var current_speed = speed
+
+func _ready() -> void:
+	if !dynamic_wall:
+		speed = 750
 
 func _process(delta):
 	#Mold doesnt fall back
 	if !player.stop:
 		var pos = player.position.x-1000
-		if pos>position.x:
+		if pos>position.x && dynamic_wall:
 			position.x = pos
 		else:
 			position.x += current_speed * delta
@@ -18,14 +23,16 @@ func _process(delta):
 	
 func speed_wall():
 	print("wallboost")
-	current_speed = speed+300
-	await get_tree().create_timer(2.0).timeout
-	current_speed = speed
+	if dynamic_wall:
+		current_speed = speed+300
+		await get_tree().create_timer(2.0).timeout
+		current_speed = speed
 	
 func slow_wall():
-	current_speed = 200
-	await get_tree().create_timer(2.0).timeout
-	current_speed = speed
+	if dynamic_wall:
+		current_speed = 200      
+		await get_tree().create_timer(2.0).timeout
+		current_speed = speed
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

@@ -1,54 +1,54 @@
 [gd_scene load_steps=17 format=3 uid="uid://cejlkc1oe1xq"]
 
-[ext_resource type="Script" uid="uid://c3bohj6oqgo6" path="res://friend.gd" id="1_3hdib"]
-[ext_resource type="Texture2D" uid="uid://dwhjifsi6nhg1" path="res://assets/Spritesheets/07_Friends_250x250.png" id="1_h35v6"]
+[ext_resource type="Script" uid="uid://c3bohj6oqgo6" path="res://scripts/friend.gd" id="1_vnovy"]
+[ext_resource type="Texture2D" uid="uid://dwhjifsi6nhg1" path="res://assets/Spritesheets/07_Friends_250x250.png" id="2_8ynmc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lwfe7"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(0, 250, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mgnmh"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(250, 250, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3hdib"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(0, 0, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvcv4"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(250, 0, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h35v6"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(0, 500, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t4qa"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(250, 500, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_owpvr"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(500, 250, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fvu5"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(750, 250, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k2ghq"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(500, 0, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cafaa"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(750, 0, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8pro"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(500, 500, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j67g2"]
-atlas = ExtResource("1_h35v6")
+atlas = ExtResource("2_8ynmc")
 region = Rect2(750, 500, 250, 250)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_46s48"]
@@ -124,7 +124,7 @@ animations = [{
 size = Vector2(84, 1095)
 
 [node name="Friend" type="Node2D"]
-script = ExtResource("1_3hdib")
+script = ExtResource("1_vnovy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -43)

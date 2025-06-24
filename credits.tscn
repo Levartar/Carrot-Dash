@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://db2sqv7egsf7g"]
 
-[ext_resource type="Script" uid="uid://b7erdax00qyxc" path="res://controls.gd" id="1_pjc1l"]
+[ext_resource type="Script" uid="uid://b7erdax00qyxc" path="res://scripts/controls.gd" id="1_pjc1l"]
 [ext_resource type="Texture2D" uid="uid://uadv3uar6vs" path="res://assets/Spritesheets/Enemies/03_Enemies_Schimmel_3_150x150.png" id="2_4av4j"]
 [ext_resource type="Texture2D" uid="uid://bowp4jeko1v3k" path="res://assets/kenney_ui-pack/PNG/Green/Double/check_square_color_cross.png" id="3_4av4j"]
 [ext_resource type="Texture2D" uid="uid://dx6spj0gx4p5e" path="res://assets/Spritesheets/Enemies/02_Enemies_Schimmel_2_150x150.png" id="3_5em78"]

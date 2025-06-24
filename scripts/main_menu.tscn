@@ -205,5 +205,5 @@ zoom = Vector2(0.7, 0.7)
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer3/ProceduralLevels" to="." method="_on_procedural_levels_pressed"]
+[connection signal="toggled" from="HBoxContainer/VBoxContainer3/ProceduralLevels" to="." method="_on_procedural_levels_toggled"]
 [connection signal="toggled" from="HBoxContainer/VBoxContainer4/DynamicWall" to="." method="_on_dynamic_wall_toggled"]
