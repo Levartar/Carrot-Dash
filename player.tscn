@@ -1,10 +1,12 @@
-[gd_scene load_steps=28 format=3 uid="uid://hgdiuf70py43"]
+[gd_scene load_steps=30 format=3 uid="uid://hgdiuf70py43"]
 
 [ext_resource type="Script" uid="uid://y5pyt15dgekg" path="res://scripts/player.gd" id="1_sweqy"]
 [ext_resource type="Shader" uid="uid://bmhlrk8uyvfh7" path="res://shader/flash.gdshader" id="2_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://be4ohmdm0obnd" path="res://assets/Spritesheets/06_Player_250x250.png" id="3_sweqy"]
 [ext_resource type="PackedScene" uid="uid://hbt7t6bofq2k" path="res://game_hud.tscn" id="4_dw050"]
 [ext_resource type="Texture2D" uid="uid://6swrfx3qbjtd" path="res://assets/Spritesheets/spritesheet-tiles-double.png" id="5_b26j0"]
+[ext_resource type="AudioStream" uid="uid://bq6bwcob4o3pw" path="res://assets/Sounds/sfx_jump.ogg" id="6_2hs0m"]
+[ext_resource type="AudioStream" uid="uid://470uti52y3v2" path="res://assets/Sounds/sfx_bump.ogg" id="7_1jxqw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7ghd"]
 shader = ExtResource("2_2hs0m")
@@ -249,3 +251,13 @@ libraries = {
 }
 
 [node name="Player" type="Node2D" parent="."]
+
+[node name="sfxJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2hs0m")
+volume_db = -12.0
+
+[node name="sfxTakeDamage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_1jxqw")
+volume_db = -10.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]

@@ -32,6 +32,9 @@ var invuln_timer = 0.0
 var damage_timer = 0.0
 var last_safe_position: Vector2
 
+@onready var sfx_jump: AudioStreamPlayer = $sfxJump
+@onready var sfx_take_damage: AudioStreamPlayer = $sfxTakeDamage
+
 var coins = 0 
 var current_level = 0
 #var time_running_without_obstacle
@@ -74,6 +77,7 @@ func _physics_process(delta: float) -> void:
 		print("Jump!")
 		velocity.x -= 100
 		velocity.y = jump_force
+		sfx_jump.play()
 	
 	# Handle Glide
 	if jumping and not is_on_floor():
@@ -151,6 +155,7 @@ func _on_damage_area_2d_body_entered(body: Node2D) -> void:
 		print("take damage")
 		velocity.x = minSpeed
 		$AnimatedSprite2D.play("damaged")
+		sfx_take_damage.play()
 		invuln_timer = invuln_duration
 		damage_timer = 0.5
 		invulnerable = true

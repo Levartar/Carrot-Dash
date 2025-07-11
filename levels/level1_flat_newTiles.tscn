@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://dndodqgdbstmw"]
+[gd_scene load_steps=42 format=4 uid="uid://dndodqgdbstmw"]
 
 [ext_resource type="Script" uid="uid://d3r87rcru1j84" path="res://scripts/game.gd" id="1_5r4kk"]
 [ext_resource type="PackedScene" uid="uid://hgdiuf70py43" path="res://player.tscn" id="2_ndnww"]
@@ -20,8 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://c7gdndhfxbej1" path="res://assets/Spritesheets/Enemies/00_Schimmelwand_1000x2000.png" id="18_rj1mn"]
 [ext_resource type="Script" uid="uid://ol1fykohcbii" path="res://scripts/particles.gd" id="19_f1ym6"]
 [ext_resource type="Texture2D" uid="uid://ciqbjtghr3rve" path="res://assets/Spritesheets/Enemies/01_Enemies_Schimmel_1_150x150.png" id="20_gth5r"]
+[ext_resource type="Gradient" uid="uid://brdfnthfi1q7k" path="res://assets/mold_fadeout_gradient.tres" id="21_pas74"]
 [ext_resource type="Texture2D" uid="uid://dx6spj0gx4p5e" path="res://assets/Spritesheets/Enemies/02_Enemies_Schimmel_2_150x150.png" id="21_sw1it"]
 [ext_resource type="Texture2D" uid="uid://uadv3uar6vs" path="res://assets/Spritesheets/Enemies/03_Enemies_Schimmel_3_150x150.png" id="22_a7jov"]
+[ext_resource type="AudioStream" uid="uid://5sc3anayng7x" path="res://assets/Music/POL-treasure-match-short.wav" id="24_pas74"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_feb5d"]
 tile_data = PackedInt32Array(0, 458754, 268435470, 65536, 524290, 0, 131072, 524290, 268435458, 1, 458754, 16, 65537, 524290, 1, 131073, 524290, 4, 2, 458754, 16, 65538, 524290, 1, 131074, 524290, 4, 3, 458754, 16, 65539, 524290, 1, 131075, 524290, 4, 4, 458754, 14, 65540, 524290, 268435456, 131076, 524290, 2)
@@ -640,7 +642,13 @@ rotation = 1.57079
 shape = SubResource("RectangleShape2D_migff")
 
 [node name="Sprite2D" type="Sprite2D" parent="MoldWall/Area2D"]
-position = Vector2(16.9965, -553)
+position = Vector2(16.9953, -231.352)
+rotation = 1.5708
+scale = Vector2(1.3567, 1.5)
+texture = ExtResource("18_rj1mn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="MoldWall/Area2D"]
+position = Vector2(16.9918, -1300)
 rotation = 1.5708
 scale = Vector2(2, 1.5)
 texture = ExtResource("18_rj1mn")
@@ -649,10 +657,10 @@ texture = ExtResource("18_rj1mn")
 script = ExtResource("19_f1ym6")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="MoldWall/Particles"]
-position = Vector2(-800, -176)
+position = Vector2(-800, -75)
 amount = 16
 texture = ExtResource("20_gth5r")
-lifetime = 6.0
+lifetime = 4.0
 emission_shape = 3
 emission_rect_extents = Vector2(600, 1000)
 spread = 0.0
@@ -661,12 +669,13 @@ initial_velocity_min = 700.0
 initial_velocity_max = 700.0
 angular_velocity_min = 40.0
 angular_velocity_max = 40.0
+color_ramp = ExtResource("21_pas74")
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="MoldWall/Particles"]
-position = Vector2(-800, -176)
+position = Vector2(-800, -75)
 amount = 16
 texture = ExtResource("21_sw1it")
-lifetime = 6.0
+lifetime = 4.0
 emission_shape = 3
 emission_rect_extents = Vector2(600, 1000)
 spread = 0.0
@@ -675,12 +684,13 @@ initial_velocity_min = 700.0
 initial_velocity_max = 700.0
 angular_velocity_min = 40.0
 angular_velocity_max = 40.0
+color_ramp = ExtResource("21_pas74")
 
 [node name="CPUParticles2D3" type="CPUParticles2D" parent="MoldWall/Particles"]
-position = Vector2(-800, -176)
+position = Vector2(-800, -75)
 amount = 16
 texture = ExtResource("22_a7jov")
-lifetime = 6.0
+lifetime = 4.0
 emission_shape = 3
 emission_rect_extents = Vector2(600, 1000)
 spread = 0.0
@@ -689,5 +699,16 @@ initial_velocity_min = 700.0
 initial_velocity_max = 700.0
 angular_velocity_min = 40.0
 angular_velocity_max = 40.0
+color_ramp = ExtResource("21_pas74")
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("24_pas74")
+volume_db = -12.0
+autoplay = true
+bus = &"music"
+
+[node name="MoldWallAudio" type="AudioStreamPlayer2D" parent="Audio"]
 
 [connection signal="body_entered" from="MoldWall/Area2D" to="MoldWall" method="_on_area_2d_body_entered"]

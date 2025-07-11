@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lq8wn3jd5glu"
-path="res://.godot/imported/04_Enemies_Käfer_175x175.png-514ef3ea419daaccb878dd3c3fffa2b9.ctex"
+path="res://.godot/imported/04_Enemies_Käfer_175x175.png-1b743424bb49a657d8ac4597ccfa1cae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/04_Enemies_Käfer_175x175.png"
-dest_files=["res://.godot/imported/04_Enemies_Käfer_175x175.png-514ef3ea419daaccb878dd3c3fffa2b9.ctex"]
+source_file="res://assets/Spritesheets/Enemies/04_Enemies_Käfer_175x175.png"
+dest_files=["res://.godot/imported/04_Enemies_Käfer_175x175.png-1b743424bb49a657d8ac4597ccfa1cae.ctex"]
 
 [params]
 
