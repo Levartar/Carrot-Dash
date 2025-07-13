@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4tr5w330nxh2"]
 
 [ext_resource type="Script" uid="uid://bp30o7qkewe7f" path="res://scripts/beetle.gd" id="1_x56ib"]
-[ext_resource type="Texture2D" uid="uid://mtxxnjyii1mb" path="res://assets/Spritesheets/Enemies/04_Enemies_Käfer_175x175.png" id="2_x56ib"]
+[ext_resource type="Texture2D" uid="uid://lq8wn3jd5glu" path="res://assets/Spritesheets/Enemies/04_Enemies_Käfer_175x175.png" id="2_x56ib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ds4fp"]
 size = Vector2(120, 92)

@@ -34,6 +34,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 modulate = Color(0.560955, 0.560955, 0.560955, 1)
+layout_mode = 0
 offset_left = 456.0
 offset_top = 232.0
 offset_right = 4456.0

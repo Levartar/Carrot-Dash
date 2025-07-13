@@ -7,8 +7,12 @@ extends Control
 func _ready():
 	panel.modulate.a = 0.0
 	play_intro()
+	$CanvasLayer/Panel/VBoxContainer/Retry.disabled = true
+	$CanvasLayer/Panel/VBoxContainer/BackToMenu.disabled = true
 
 func show_game_over():
+	$CanvasLayer/Panel/VBoxContainer/Retry.disabled = false
+	$CanvasLayer/Panel/VBoxContainer/BackToMenu.disabled = false
 	panel.visible = true
 	panel.modulate.a = 0.0
 	
