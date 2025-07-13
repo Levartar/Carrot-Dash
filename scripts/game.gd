@@ -15,6 +15,9 @@ func _on_hud_ready():
 	var speed_digits = $Player/Game_Hud/CanvasLayer/SpeedContainer/SpeedDigits
 	speed_digits.set_value(10)
 	
+	$Player/AnimationPlayer.stop()
+	$Player/AnimationPlayer.reset_section()
+	
 #func _process(delta):
 #	$Game_Hud/CoinContainer/CoinDigits.set_value(1)
 #	$Game_Hud/SpeedContainer/SpeedDigits.set_value(int(player.velocity.x))

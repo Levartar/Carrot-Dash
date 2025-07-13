@@ -41,10 +41,13 @@ var current_level = 0
 
 #func _init() -> void:
 #	time_running_without_obstacle = get_unix_time_from_system()
-
 func _ready() -> void:
+	resetAnims()
+
+func resetAnims() -> void:
 	$AnimationPlayer.stop()
 	$AnimationPlayer.reset_section()
+	print("reset Anims")
 
 func _physics_process(delta: float) -> void:
 	#Update Hud

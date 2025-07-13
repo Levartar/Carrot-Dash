@@ -34,6 +34,7 @@ func play_outro():
 
 func _on_retry_pressed() -> void:
 	get_tree().reload_current_scene()
+	get_parent().resetAnims()
 
 
 func _on_back_to_menu_pressed() -> void:
