@@ -23,7 +23,7 @@ const invuln_duration = 3.0
 var jumping = false
 var gliding = false
 var sliding = false
-var invulnerable = false
+var damaged = false
 var stop = false
 var jump_held_time = 0.0
 var slide_timer = 0.0
@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 		last_safe_position = global_position+Vector2(-250,0)
 		
 	# Handle Jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and !$RayCast2D.is_colliding() and !$RayCast2D.is_colliding():
 		jumping = true
 		gliding = false
 		jump_held_time = 0.0
@@ -104,19 +104,19 @@ func _physics_process(delta: float) -> void:
 		
 	if sliding:
 		slide_timer -= delta
-		if slide_timer <= 0.0 and !$RayCast2D.is_colliding():
+		if slide_timer <= 0.0 and !$RayCast2D.is_colliding() and !$RayCast2D.is_colliding():
 			sliding = false
 			$CollisionShape2D.shape.size.y = original_collider_height
 			$CollisionShape2D.position.y = original_collider_pos_height
 			
-	if invulnerable:
+	if damaged:
 		invuln_timer -= delta
 		damage_timer -= delta
 		$AnimationPlayer.play("take_damage")
 		if damage_timer > 0.0:
 			$AnimatedSprite2D.play("damaged")
 		if invuln_timer <= 0.0:
-			invulnerable = false
+			damaged = false
 			$AnimationPlayer.stop()
 
 	# Apply gravity and acceleration
@@ -154,14 +154,13 @@ func _on_coin_entered() -> void:
 
 #Take Damage
 func _on_damage_area_2d_body_entered(body: Node2D) -> void:
-	if body.name=="Player" and !invulnerable:
+	if body.name=="Player" and !damaged:
 		print("take damage")
 		velocity.x = minSpeed
-		$AnimatedSprite2D.play("damaged")
+		damaged = true
 		sfx_take_damage.play()
 		invuln_timer = invuln_duration
 		damage_timer = 0.5
-		invulnerable = true
 		
 func update_mask_center():
 	var viewport_size = get_viewport().get_visible_rect().size
@@ -175,7 +174,10 @@ func loose_game(body: Node2D) -> void:
 	if body.name == "Player":  # or check for group, or class_name
 		var hud = body.get_child(3) #4 is hud
 		hud.show_game_over()
-		body.set_process(false)
+		$AnimatedSprite2D.play("damaged")
+		set_physics_process(false)
+
+
 
 func win_game(color: String):
 	stop = true

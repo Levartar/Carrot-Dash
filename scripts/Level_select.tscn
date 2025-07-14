@@ -90,7 +90,6 @@ texture = ExtResource("5_8c03b")
 
 [node name="Level2" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer"]
 layout_mode = 2
-disabled = true
 texture_normal = ExtResource("1_1tid8")
 texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
@@ -124,7 +123,6 @@ texture = ExtResource("5_8c03b")
 
 [node name="Level3" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer"]
 layout_mode = 2
-disabled = true
 texture_normal = ExtResource("1_1tid8")
 texture_pressed = ExtResource("2_0y2nu")
 texture_hover = ExtResource("3_qyhfl")
@@ -291,8 +289,8 @@ text = "Back"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level2" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level3" to="." method="_on_level_1_pressed"]

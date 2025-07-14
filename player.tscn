@@ -207,6 +207,7 @@ position = Vector2(-8, -4)
 scale = Vector2(1.108, 1.108)
 sprite_frames = SubResource("SpriteFrames_nvl01")
 animation = &"damaged"
+frame_progress = 0.346218
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 24)
@@ -245,6 +246,10 @@ scale_amount_max = 0.0
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-48, 0)
+target_position = Vector2(0, -100)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(46, 0)
 target_position = Vector2(0, -100)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

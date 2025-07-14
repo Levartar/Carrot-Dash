@@ -35,3 +35,13 @@ func _on_back_pressed() -> void:
 func _on_level_1_pressed() -> void:
 	var scene = load("res://levels/level1_flat_newTiles.tscn")
 	get_tree().change_scene_to_packed(scene)
+
+
+func _on_level_2_pressed() -> void:
+	var scene = load("res://levels/level2.tscn")
+	get_tree().change_scene_to_packed(scene)
+
+
+func _on_level_3_pressed() -> void:
+	var scene = load("res://levels/level3.tscn")
+	get_tree().change_scene_to_packed(scene)
