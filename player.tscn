@@ -11,7 +11,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7ghd"]
 shader = ExtResource("2_2hs0m")
-shader_parameter/color = Color(0.972549, 0.0941176, 0, 1)
+shader_parameter/color = Color(0.821366, 0.379164, 0.0566461, 1)
 shader_parameter/flashState = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]

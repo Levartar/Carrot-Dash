@@ -6,7 +6,7 @@ const original_collider_pos_height = 24
 const slide_collider_pos_height = 65
 
 #Gameplay Consts
-const gravity = 48
+var gravity = 48
 const glide_gravity = 1
 const speed = 600
 const minSpeed = 400
