@@ -9,8 +9,15 @@ var save_data: Dictionary = {
 		"wall_dynamic": true,
 	},
 	"completed_levels": [],
-	"saved_friends": 5
+	"saved_friends": 0
 }
+
+func reset_save():
+	save_game()
+	load_game()
+
+func _ready() -> void:
+	reset_save()
 
 func save_game():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
