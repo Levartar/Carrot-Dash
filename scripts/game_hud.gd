@@ -26,7 +26,7 @@ func show_game_over():
 		
 func play_intro():
 	var tween = get_tree().create_tween()
-	tween.tween_property($CanvasLayer/ColorRect.material, "shader_parameter/radius", 1.5, 5.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property($CanvasLayer/ColorRect.material, "shader_parameter/radius", 1.5, 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	
 func play_outro():
 	var tween = get_tree().create_tween()

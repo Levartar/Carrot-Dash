@@ -16,9 +16,6 @@ func reset_save():
 	save_game()
 	load_game()
 
-func _ready() -> void:
-	reset_save()
-
 func save_game():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data))
