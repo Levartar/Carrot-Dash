@@ -1,12 +1,16 @@
 extends Node2D
 
+@onready var sfx_mold_wall: AudioStreamPlayer2D = $sfxMoldWall
 
 @onready var player:Player = get_node("/root/Game/Player")
 @onready var dynamic_wall = SaveGame.save_data.config.wall_dynamic
 var speed = 700
 var current_speed = speed
 
+
+
 func _ready() -> void:
+	sfx_mold_wall.play()
 	if !dynamic_wall:
 		speed = 750
 
@@ -42,3 +46,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		body.loose_game(body)
 		print("moldloose")
+		sfx_mold_wall.stop()

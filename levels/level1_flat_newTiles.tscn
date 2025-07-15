@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://dndodqgdbstmw"]
+[gd_scene load_steps=57 format=4 uid="uid://dndodqgdbstmw"]
 
 [ext_resource type="Script" uid="uid://d3r87rcru1j84" path="res://scripts/game.gd" id="1_5r4kk"]
 [ext_resource type="PackedScene" uid="uid://hgdiuf70py43" path="res://player.tscn" id="2_ndnww"]
@@ -23,6 +23,7 @@
 [ext_resource type="Gradient" uid="uid://brdfnthfi1q7k" path="res://assets/mold_fadeout_gradient.tres" id="21_pas74"]
 [ext_resource type="Texture2D" uid="uid://dx6spj0gx4p5e" path="res://assets/Spritesheets/Enemies/02_Enemies_Schimmel_2_150x150.png" id="21_sw1it"]
 [ext_resource type="Texture2D" uid="uid://uadv3uar6vs" path="res://assets/Spritesheets/Enemies/03_Enemies_Schimmel_3_150x150.png" id="22_a7jov"]
+[ext_resource type="AudioStream" uid="uid://uk37newh0vvw" path="res://assets/Sounds/schimmel_sound.ogg" id="24_g22ax"]
 [ext_resource type="AudioStream" uid="uid://5sc3anayng7x" path="res://assets/Music/POL-treasure-match-short.wav" id="24_pas74"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_feb5d"]
@@ -760,11 +761,15 @@ angular_velocity_min = 40.0
 angular_velocity_max = 40.0
 color_ramp = ExtResource("21_pas74")
 
+[node name="sfxMoldWall" type="AudioStreamPlayer2D" parent="MoldWall"]
+stream = ExtResource("24_g22ax")
+volume_db = 4.0
+
 [node name="Audio" type="Node" parent="."]
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("24_pas74")
-volume_db = -12.0
+volume_db = -24.0
 autoplay = true
 bus = &"music"
 
