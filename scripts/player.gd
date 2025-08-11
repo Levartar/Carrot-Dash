@@ -18,7 +18,7 @@ const glide_decceleration = 3
 const slide_height := 100
 const slide_boost = 50
 const slide_duration = 0.5
-const invuln_duration = 3.0
+const invuln_duration = 2.0
 
 var jumping = false
 var gliding = false
@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 
 	if sliding:
 		$AnimatedSprite2D.play("slide")
-	elif !jumping and !gliding:
+	elif !jumping and !gliding and !damaged:
 		if velocity.x>10:
 			$AnimatedSprite2D.play("walk")
 		else: 
@@ -113,8 +113,7 @@ func _physics_process(delta: float) -> void:
 		invuln_timer -= delta
 		damage_timer -= delta
 		$AnimationPlayer.play("take_damage")
-		if damage_timer > 0.0:
-			$AnimatedSprite2D.play("damaged")
+		$AnimatedSprite2D.play("damaged")
 		if invuln_timer <= 0.0:
 			damaged = false
 			$AnimationPlayer.stop()
@@ -160,7 +159,7 @@ func _on_damage_area_2d_body_entered(body: Node2D) -> void:
 		damaged = true
 		sfx_take_damage.play()
 		invuln_timer = invuln_duration
-		damage_timer = 0.5
+		damage_timer = 1
 		
 func update_mask_center():
 	var viewport_size = get_viewport().get_visible_rect().size
@@ -184,7 +183,6 @@ func win_game(color: String):
 	$Game_Hud.play_outro()
 	await get_tree().create_timer(2.0).timeout
 	print("Win Game")
-	print("Is inside tree?", is_inside_tree())
 	SaveGame.save_data.saved_friends += 1
 	SaveGame.save_data.completed_levels.append(current_level)
 	SaveGame.save_game()

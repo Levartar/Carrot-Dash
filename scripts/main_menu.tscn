@@ -1,13 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfdcxddej3cyd"]
+[gd_scene load_steps=16 format=3 uid="uid://bfdcxddej3cyd"]
 
 [ext_resource type="Script" uid="uid://bgxhpmvsdkn0p" path="res://scripts/main_menu.gd" id="1_4qgnl"]
-[ext_resource type="Texture2D" uid="uid://cqggj68pyau4" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_flat.png" id="2_6kdmf"]
-[ext_resource type="Texture2D" uid="uid://ca2tuh481vx6x" path="res://assets/Game Menü.png" id="2_8sr6x"]
+[ext_resource type="Texture2D" uid="uid://dsvxrlvn6yxto" path="res://assets/User Interface/01_Game_Menu/Screen_Game_Menu_bg.png" id="2_nwri0"]
 [ext_resource type="Texture2D" uid="uid://cu24q2b644dx8" path="res://assets/kenney_ui-pack/PNG/Green/Double/check_square_color.png" id="2_pi3ub"]
-[ext_resource type="Texture2D" uid="uid://cjycghgwm710w" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_rectangle_flat.png" id="3_7d0kc"]
 [ext_resource type="Texture2D" uid="uid://c8mp4rg7wrawi" path="res://assets/kenney_ui-pack/PNG/Green/Double/check_square_color_square.png" id="3_8sr6x"]
-[ext_resource type="Texture2D" uid="uid://do4age7s5o4gi" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_gloss.png" id="4_aogpx"]
+[ext_resource type="Texture2D" uid="uid://c1it5lxsvfuqb" path="res://assets/User Interface/01_Game_Menu/Button_Select_Level_default.png" id="3_k66xw"]
+[ext_resource type="Texture2D" uid="uid://df45uoqxc4ahp" path="res://assets/User Interface/01_Game_Menu/Button_Select_Level_hover.png" id="4_egaox"]
 [ext_resource type="FontFile" uid="uid://owl0bsmrjwgi" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="5_nwri0"]
+[ext_resource type="Texture2D" uid="uid://dc8tuynljaioh" path="res://assets/User Interface/01_Game_Menu/Button_Select_Level_pressed.png" id="5_p7mgp"]
+[ext_resource type="Texture2D" uid="uid://dbkrdegv2gfxc" path="res://assets/User Interface/01_Game_Menu/Button_Controls_default.png" id="6_sp31b"]
+[ext_resource type="Texture2D" uid="uid://c8mkkvhmhgk02" path="res://assets/User Interface/01_Game_Menu/Button_Controls_hover.png" id="7_2vhfv"]
+[ext_resource type="Texture2D" uid="uid://qr7pjdorqdrt" path="res://assets/User Interface/01_Game_Menu/Button_Controls_pressed.png" id="8_4rrpm"]
+[ext_resource type="PackedScene" uid="uid://df52fqkkdq2te" path="res://licenser/license_screen_loader_button.tscn" id="9_ak2hq"]
+[ext_resource type="Texture2D" uid="uid://y7mu4itp60tm" path="res://assets/User Interface/01_Game_Menu/Button_Credits_default.png" id="9_x1i6n"]
+[ext_resource type="Texture2D" uid="uid://cfky35f4omngv" path="res://assets/User Interface/01_Game_Menu/Button_Credits_hover.png" id="10_kqdb8"]
+[ext_resource type="Texture2D" uid="uid://dlfqb24300ulw" path="res://assets/User Interface/01_Game_Menu/Button_Credits_pressed.png" id="11_vy0x4"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,28 +25,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4qgnl")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -964.0
-offset_top = -484.0
-offset_right = 964.0
-offset_bottom = 484.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-layout_mode = 1
-offset_left = 220.0
-offset_top = 164.0
-offset_right = 4220.0
-offset_bottom = 2164.0
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("2_8sr6x")
+offset_right = 4000.0
+offset_bottom = 2000.0
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("2_nwri0")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -48,108 +39,53 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -522.0
-offset_top = -258.0
-offset_right = 522.0
-offset_bottom = 258.0
+offset_left = 8.0
+offset_top = -64.0
+offset_right = 1788.0
+offset_bottom = 1300.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.35, 0.35)
 
 [node name="spacer" type="Control" parent="HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(305, 0)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 20
 alignment = 1
-
-[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_nwri0")
-theme_override_font_sizes/font_size = 64
-text = "Carrot Dash"
 
 [node name="StartGame" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("2_6kdmf")
-texture_pressed = ExtResource("3_7d0kc")
-texture_hover = ExtResource("4_aogpx")
-
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/StartGame"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -141.0
-offset_top = -20.0
-offset_right = 141.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_nwri0")
-theme_override_font_sizes/font_size = 35
-text = "Start Game"
+texture_normal = ExtResource("3_k66xw")
+texture_pressed = ExtResource("5_p7mgp")
+texture_hover = ExtResource("4_egaox")
 
 [node name="Controls" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("2_6kdmf")
-texture_pressed = ExtResource("3_7d0kc")
-texture_hover = ExtResource("4_aogpx")
-
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Controls"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -141.0
-offset_top = -20.0
-offset_right = 141.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_nwri0")
-theme_override_font_sizes/font_size = 35
-text = "Controls"
-horizontal_alignment = 1
+texture_normal = ExtResource("6_sp31b")
+texture_pressed = ExtResource("8_4rrpm")
+texture_hover = ExtResource("7_2vhfv")
 
 [node name="Credits" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("2_6kdmf")
-texture_pressed = ExtResource("3_7d0kc")
-texture_hover = ExtResource("4_aogpx")
-
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Credits"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -141.0
-offset_top = -20.0
-offset_right = 141.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_nwri0")
-theme_override_font_sizes/font_size = 35
-text = "Credits"
-horizontal_alignment = 1
+texture_normal = ExtResource("9_x1i6n")
+texture_pressed = ExtResource("11_vy0x4")
+texture_hover = ExtResource("10_kqdb8")
 
 [node name="spacer2" type="Control" parent="HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
+visible = false
+custom_minimum_size = Vector2(305, 0)
 layout_mode = 2
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 
@@ -170,10 +106,12 @@ Levels"
 horizontal_alignment = 1
 
 [node name="spacer3" type="Control" parent="HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 
@@ -193,8 +131,16 @@ text = "Dynamic
 Wall"
 horizontal_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="HBoxContainer"]
-position = Vector2(566, 284)
+[node name="License Screen Loader Button" parent="." instance=ExtResource("9_ak2hq")]
+layout_mode = 1
+offset_left = -160.0
+offset_top = 160.0
+offset_right = 584.0
+offset_bottom = 191.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(688, 344)
+scale = Vector2(0.5, 0.5)
 zoom = Vector2(0.7, 0.7)
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]

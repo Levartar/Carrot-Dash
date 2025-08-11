@@ -11,7 +11,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7ghd"]
 shader = ExtResource("2_2hs0m")
-shader_parameter/color = Color(0.821366, 0.379164, 0.0566461, 1)
+shader_parameter/color = Color(0.929412, 0.454902, 0.117647, 1)
 shader_parameter/flashState = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
@@ -207,7 +207,7 @@ position = Vector2(-8, -4)
 scale = Vector2(1.108, 1.108)
 sprite_frames = SubResource("SpriteFrames_nvl01")
 animation = &"damaged"
-frame_progress = 0.346218
+frame_progress = 0.033233
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 24)

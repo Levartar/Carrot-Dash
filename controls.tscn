@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgbds2h1qhcui"]
+[gd_scene load_steps=6 format=3 uid="uid://cgbds2h1qhcui"]
 
-[ext_resource type="Texture2D" uid="uid://b73eml5lm0wkh" path="res://assets/Controls.png" id="1_gpdjo"]
 [ext_resource type="Script" uid="uid://b7erdax00qyxc" path="res://scripts/controls.gd" id="1_qo8cm"]
-[ext_resource type="Texture2D" uid="uid://bowp4jeko1v3k" path="res://assets/kenney_ui-pack/PNG/Green/Double/check_square_color_cross.png" id="3_ff64o"]
-[ext_resource type="FontFile" uid="uid://owl0bsmrjwgi" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="4_kxvun"]
+[ext_resource type="Texture2D" uid="uid://d0y512g0jeq2" path="res://assets/User Interface/03_Controls/Screen_Controls_bg.png" id="2_ff64o"]
+[ext_resource type="Texture2D" uid="uid://lr3ntt4ientd" path="res://assets/User Interface/03_Controls/Button_Back_default.png" id="3_kxvun"]
+[ext_resource type="Texture2D" uid="uid://cehsojpw1oroa" path="res://assets/User Interface/03_Controls/Button_Back_pressed.png" id="4_kq3yo"]
+[ext_resource type="Texture2D" uid="uid://ckrr4t2no61ny" path="res://assets/User Interface/03_Controls/Button_Back_hover.png" id="5_kxtwu"]
 
 [node name="Controls" type="Control"]
 layout_mode = 3
@@ -15,36 +16,24 @@ grow_vertical = 2
 script = ExtResource("1_qo8cm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(959.5, 479.55)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_gpdjo")
+position = Vector2(480, 240)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_ff64o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(959.5, 479.55)
+position = Vector2(480, 240)
 scale = Vector2(0.5, 0.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 24.0
-offset_top = 16.0
-offset_right = 88.0
-offset_bottom = 102.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 298.0
+offset_bottom = 298.0
+scale = Vector2(0.4, 0.4)
 
 [node name="Back" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_ff64o")
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_kxvun")
-text = "Back"
-horizontal_alignment = 1
+texture_normal = ExtResource("3_kxvun")
+texture_pressed = ExtResource("4_kq3yo")
+texture_hover = ExtResource("5_kxtwu")
 
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

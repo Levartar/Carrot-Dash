@@ -3,6 +3,7 @@ extends Node
 # Save file path (user:// resolves to OS-specific save folder)
 const SAVE_PATH := "res://savegame.json"
 
+var friend_color = "red"
 var save_data: Dictionary = {
 	"config": {
 		"procedural":false,

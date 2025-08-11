@@ -6,7 +6,7 @@
 size = Vector2(125, 30)
 
 [sub_resource type="Gradient" id="Gradient_cki6r"]
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+colors = PackedColorArray(0.00784314, 0.294118, 0.431373, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_aqv4r"]
 gradient = SubResource("Gradient_cki6r")
@@ -22,9 +22,9 @@ position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_1s0jb")
 
 [node name="Sprite2D" type="Sprite2D" parent="DamageArea2D"]
-position = Vector2(2.14713e-06, -56.8794)
+position = Vector2(0.0011374, 256.728)
 rotation = -1.5708
-scale = Vector2(0.616246, 125)
+scale = Vector2(3.0663, 125)
 texture = SubResource("GradientTexture1D_aqv4r")
 
 [node name="Respawn" type="Marker2D" parent="DamageArea2D"]

@@ -1,15 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://b53hx37tj6d0d"]
+[gd_scene load_steps=19 format=3 uid="uid://b53hx37tj6d0d"]
 
 [ext_resource type="Script" uid="uid://04cfvy5khkie" path="res://scripts/level_select.gd" id="1_0y2nu"]
-[ext_resource type="Texture2D" uid="uid://l7bwm0tapelq" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_square_depth_flat.png" id="1_1tid8"]
-[ext_resource type="Texture2D" uid="uid://bpg36n7kqp8k8" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_square_flat.png" id="2_0y2nu"]
-[ext_resource type="Texture2D" uid="uid://k2r2517t0oe3" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_square_depth_gloss.png" id="3_qyhfl"]
-[ext_resource type="FontFile" uid="uid://dk51qqmjnxhfj" path="res://assets/kenney_ui-pack/Font/Kenney Future Narrow.ttf" id="4_v14ah"]
-[ext_resource type="Texture2D" uid="uid://hfrdn0e2o8ol" path="res://assets/kenney_ui-pack/PNG/Green/Double/star.png" id="5_8c03b"]
-[ext_resource type="Texture2D" uid="uid://3pxeuraj6ft0" path="res://assets/kenney_ui-pack/PNG/Green/Double/star_outline.png" id="6_qyhfl"]
-[ext_resource type="Texture2D" uid="uid://bowp4jeko1v3k" path="res://assets/kenney_ui-pack/PNG/Green/Double/check_square_color_cross.png" id="8_8c03b"]
+[ext_resource type="Texture2D" uid="uid://f3lwg8u62wnj" path="res://assets/User Interface/02_Select_Level/Screen_Select_Levels_bg.png" id="2_4w3tn"]
+[ext_resource type="Texture2D" uid="uid://jbbinvo6cq7k" path="res://assets/User Interface/02_Select_Level/Button_Level_1_default.png" id="3_g58au"]
+[ext_resource type="Texture2D" uid="uid://dle2bwd61j6lx" path="res://assets/User Interface/02_Select_Level/Button_Level_1_pressed.png" id="4_hvncr"]
+[ext_resource type="Texture2D" uid="uid://svtgm4phw3gp" path="res://assets/User Interface/02_Select_Level/Button_Level_1_hover.png" id="5_fr5mt"]
+[ext_resource type="Texture2D" uid="uid://usn0x00aqpax" path="res://assets/User Interface/02_Select_Level/Button_Level_2_default.png" id="6_qeong"]
+[ext_resource type="Texture2D" uid="uid://drpa4midmnkfp" path="res://assets/User Interface/02_Select_Level/Button_Level_2_pressed.png" id="7_qxdpk"]
 [ext_resource type="Texture2D" uid="uid://dpb5puncvspou" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_square_line.png" id="8_a1o6p"]
-[ext_resource type="FontFile" uid="uid://owl0bsmrjwgi" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="9_a1o6p"]
+[ext_resource type="Texture2D" uid="uid://dabovncf6luwc" path="res://assets/User Interface/02_Select_Level/Button_Level_2_hover.png" id="8_vlv1u"]
+[ext_resource type="Texture2D" uid="uid://bxn8wv05kvn2m" path="res://assets/User Interface/02_Select_Level/Button_Back_default.png" id="10_5v785"]
+[ext_resource type="Texture2D" uid="uid://bedy1e6ba4ily" path="res://assets/User Interface/02_Select_Level/Button_Level_3_default.png" id="10_ad1en"]
+[ext_resource type="Texture2D" uid="uid://bu025h6uf6uld" path="res://assets/User Interface/02_Select_Level/Button_Back_pressed.png" id="11_62hu2"]
+[ext_resource type="Texture2D" uid="uid://dbqnsj3a17puo" path="res://assets/User Interface/02_Select_Level/Button_Level_3_pressed.png" id="11_r8e3c"]
+[ext_resource type="Texture2D" uid="uid://diejct8gbi6ej" path="res://assets/User Interface/02_Select_Level/Button_Back_hover.png" id="12_g58au"]
+[ext_resource type="Texture2D" uid="uid://cff22o28vgnyf" path="res://assets/User Interface/02_Select_Level/Button_Level_3_hover.png" id="12_rvp0a"]
+[ext_resource type="Texture2D" uid="uid://brniylrmmagg8" path="res://assets/User Interface/02_Select_Level/Button_Level_4_default.png" id="13_qeong"]
+[ext_resource type="Texture2D" uid="uid://cljqn63ecnhw1" path="res://assets/User Interface/02_Select_Level/Button_Level_4_pressed.png" id="14_qxdpk"]
+[ext_resource type="Texture2D" uid="uid://c52igqpyg0tsw" path="res://assets/User Interface/02_Select_Level/Button_Level_4_hover.png" id="15_vlv1u"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -22,28 +30,25 @@ script = ExtResource("1_0y2nu")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_4w3tn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -232.0
-offset_top = -158.0
-offset_right = 232.0
-offset_bottom = 158.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 211.0
+offset_top = 120.0
+offset_right = 2410.0
+offset_bottom = 1463.0
+scale = Vector2(0.25, 0.25)
 theme_override_constants/separation = 40
 
 [node name="Spawnzone1" type="Control" parent="Panel/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 
@@ -58,240 +63,73 @@ theme_override_constants/separation = 40
 
 [node name="Level1" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_1tid8")
-texture_pressed = ExtResource("2_0y2nu")
-texture_hover = ExtResource("3_qyhfl")
-
-[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level1"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -39.0
-offset_right = 40.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_v14ah")
-text = "Level 1
-"
-
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level1"]
-position = Vector2(64, 48)
-scale = Vector2(0.57, 0.57)
-texture = ExtResource("6_qyhfl")
-
-[node name="Star1" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level1"]
-position = Vector2(64, 48)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_8c03b")
+texture_normal = ExtResource("3_g58au")
+texture_pressed = ExtResource("4_hvncr")
+texture_hover = ExtResource("5_fr5mt")
 
 [node name="Level2" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_1tid8")
-texture_pressed = ExtResource("2_0y2nu")
-texture_hover = ExtResource("3_qyhfl")
+texture_normal = ExtResource("6_qeong")
+texture_pressed = ExtResource("7_qxdpk")
+texture_hover = ExtResource("8_vlv1u")
 texture_disabled = ExtResource("8_a1o6p")
-
-[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -39.0
-offset_right = 40.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_v14ah")
-text = "Level 2
-"
-
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2"]
-position = Vector2(64, 48)
-scale = Vector2(0.57, 0.57)
-texture = ExtResource("6_qyhfl")
-
-[node name="Star2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2"]
-position = Vector2(64, 48)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_8c03b")
 
 [node name="Level3" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_1tid8")
-texture_pressed = ExtResource("2_0y2nu")
-texture_hover = ExtResource("3_qyhfl")
+texture_normal = ExtResource("10_ad1en")
+texture_pressed = ExtResource("11_r8e3c")
+texture_hover = ExtResource("12_rvp0a")
 texture_disabled = ExtResource("8_a1o6p")
-
-[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -39.0
-offset_right = 40.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_v14ah")
-text = "Level 3
-"
-
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3"]
-position = Vector2(64, 48)
-scale = Vector2(0.57, 0.57)
-texture = ExtResource("6_qyhfl")
-
-[node name="Star3" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3"]
-position = Vector2(64, 48)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_8c03b")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Panel/HBoxContainer/LevelsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Level1" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2"]
+[node name="Level6" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2"]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("1_1tid8")
-texture_pressed = ExtResource("2_0y2nu")
-texture_hover = ExtResource("3_qyhfl")
-texture_disabled = ExtResource("8_a1o6p")
+texture_normal = ExtResource("13_qeong")
+texture_pressed = ExtResource("14_qxdpk")
+texture_hover = ExtResource("15_vlv1u")
+texture_disabled = ExtResource("13_qeong")
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level1"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -39.0
-offset_right = 40.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_v14ah")
-text = "Level 4
-"
-
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level1"]
-position = Vector2(64, 48)
-scale = Vector2(0.57, 0.57)
-texture = ExtResource("6_qyhfl")
-
-[node name="Star4" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level1"]
-position = Vector2(64, 48)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_8c03b")
-
-[node name="Level2" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2"]
+[node name="Level4" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2"]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("1_1tid8")
-texture_pressed = ExtResource("2_0y2nu")
-texture_hover = ExtResource("3_qyhfl")
-texture_disabled = ExtResource("8_a1o6p")
+texture_normal = ExtResource("13_qeong")
+texture_pressed = ExtResource("14_qxdpk")
+texture_hover = ExtResource("15_vlv1u")
+texture_disabled = ExtResource("13_qeong")
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -39.0
-offset_right = 40.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_v14ah")
-text = "Level 5
-"
-
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level2"]
-position = Vector2(64, 48)
-scale = Vector2(0.57, 0.57)
-texture = ExtResource("6_qyhfl")
-
-[node name="Star5" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level2"]
-position = Vector2(64, 48)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_8c03b")
-
-[node name="Level3" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2"]
+[node name="Level5" type="TextureButton" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2"]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("1_1tid8")
-texture_pressed = ExtResource("2_0y2nu")
-texture_hover = ExtResource("3_qyhfl")
-texture_disabled = ExtResource("8_a1o6p")
-
-[node name="Label" type="Label" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level3"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -39.0
-offset_right = 40.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_v14ah")
-text = "Level 6
-"
-
-[node name="Sprite2D2" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level3"]
-position = Vector2(64, 48)
-scale = Vector2(0.57, 0.57)
-texture = ExtResource("6_qyhfl")
-
-[node name="Star6" type="Sprite2D" parent="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level3"]
-position = Vector2(64, 48)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_8c03b")
+texture_normal = ExtResource("13_qeong")
+texture_pressed = ExtResource("14_qxdpk")
+texture_hover = ExtResource("15_vlv1u")
+texture_disabled = ExtResource("13_qeong")
 
 [node name="Spawnzone2" type="Control" parent="Panel/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -440.0
-offset_top = -224.0
-offset_right = -376.0
-offset_bottom = -138.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 298.0
+offset_bottom = 298.0
+scale = Vector2(0.4, 0.4)
 
 [node name="Back" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("8_8c03b")
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_a1o6p")
-text = "Back"
-horizontal_alignment = 1
+texture_normal = ExtResource("10_5v785")
+texture_pressed = ExtResource("11_62hu2")
+texture_hover = ExtResource("12_g58au")
 
 [connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer/Level3" to="." method="_on_level_3_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level2" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level3" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level6" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level4" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/LevelsContainer/HBoxContainer2/Level5" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

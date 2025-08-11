@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbmlwvy1qgxmw"]
+[gd_scene load_steps=7 format=3 uid="uid://bbmlwvy1qgxmw"]
 
 [ext_resource type="PackedScene" uid="uid://cejlkc1oe1xq" path="res://objects/friend.tscn" id="1_l2arl"]
 [ext_resource type="Script" uid="uid://bwd37sgc6vdtq" path="res://scripts/win_screen.gd" id="1_luvg0"]
-[ext_resource type="FontFile" uid="uid://owl0bsmrjwgi" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="1_wmwda"]
-[ext_resource type="Texture2D" uid="uid://ca2tuh481vx6x" path="res://assets/Game Menü.png" id="2_5hoe6"]
-[ext_resource type="Texture2D" uid="uid://cqggj68pyau4" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_flat.png" id="3_26557"]
-[ext_resource type="Texture2D" uid="uid://cjycghgwm710w" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_rectangle_flat.png" id="4_luvg0"]
-[ext_resource type="Texture2D" uid="uid://do4age7s5o4gi" path="res://assets/kenney_ui-pack/PNG/Green/Double/button_rectangle_depth_gloss.png" id="5_5hoe6"]
+[ext_resource type="Texture2D" uid="uid://m4ot3g0n55gr" path="res://assets/User Interface/06_Won_and_Saved/Screen_Won_Saved_bg.png" id="2_luvg0"]
+[ext_resource type="Texture2D" uid="uid://cnlnckj72f04e" path="res://assets/User Interface/06_Won_and_Saved/Button_Back_to_Menu_default.png" id="5_5hoe6"]
+[ext_resource type="Texture2D" uid="uid://dgyneoxxpxtf5" path="res://assets/User Interface/06_Won_and_Saved/Button_Back_to_Menu_pressed.png" id="6_g6jvr"]
+[ext_resource type="Texture2D" uid="uid://ccb8ah0wamckv" path="res://assets/User Interface/06_Won_and_Saved/Button_Back_to_Menu_hover.png" id="7_4kgk1"]
 
 [node name="WinScreen" type="Control"]
 z_index = 21
@@ -18,29 +17,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_luvg0")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -964.0
-offset_top = -484.0
-offset_right = 964.0
-offset_bottom = 484.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-modulate = Color(0.560955, 0.560955, 0.560955, 1)
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 456.0
-offset_top = 232.0
-offset_right = 4456.0
-offset_bottom = 2232.0
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_5hoe6")
+offset_right = 4000.0
+offset_bottom = 2000.0
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_luvg0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -49,63 +31,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -192.0
-offset_right = 232.0
-offset_bottom = 274.0
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 482.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.8, 0.8)
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_wmwda")
-theme_override_font_sizes/font_size = 64
-text = "You Won"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_wmwda")
-theme_override_font_sizes/font_size = 48
-text = "and Saved"
-horizontal_alignment = 1
+scale = Vector2(0.3, 0.3)
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 220)
 layout_mode = 2
 
 [node name="Friend" parent="VBoxContainer/Control" instance=ExtResource("1_l2arl")]
-position = Vector2(192, 138.5)
+scale = Vector2(2, 2)
 
-[node name="BackToLevelSelect" type="TextureButton" parent="VBoxContainer"]
+[node name="Button" type="Control" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="BackToLevelSelect" type="TextureButton" parent="VBoxContainer/Button"]
+layout_mode = 2
+offset_left = -560.0
+offset_top = -48.0
+offset_right = 602.0
+offset_bottom = 394.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture_normal = ExtResource("3_26557")
-texture_pressed = ExtResource("4_luvg0")
-texture_hover = ExtResource("5_5hoe6")
+texture_normal = ExtResource("5_5hoe6")
+texture_pressed = ExtResource("6_g6jvr")
+texture_hover = ExtResource("7_4kgk1")
 
-[node name="Label" type="Label" parent="VBoxContainer/BackToLevelSelect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -141.0
-offset_top = -20.0
-offset_right = 141.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_wmwda")
-theme_override_font_sizes/font_size = 35
-text = "Back to Menu"
-horizontal_alignment = 1
-
-[connection signal="pressed" from="VBoxContainer/BackToLevelSelect" to="." method="_on_back_to_level_select_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button/BackToLevelSelect" to="." method="_on_back_to_level_select_pressed"]

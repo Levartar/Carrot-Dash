@@ -5,7 +5,7 @@ var colorArray: PackedStringArray = ["red","brown","yellow"]
 var color="red"
 
 func _ready() -> void:
-	color = colorArray[randi()%3]
+	color = SaveGame.friend_color
 	sad_color(color)
 	var win_screen = get_node("/root/WinScreen")
 	var lvl_select = get_node("/root/LevelSelect")

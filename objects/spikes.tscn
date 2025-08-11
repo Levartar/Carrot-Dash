@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4hbce24bou31"]
+[gd_scene load_steps=6 format=3 uid="uid://c4hbce24bou31"]
 
 [ext_resource type="Script" uid="uid://bfvq4cmnvlrva" path="res://damage_area_2d.gd" id="1_nrdsm"]
 [ext_resource type="Texture2D" uid="uid://6swrfx3qbjtd" path="res://assets/Spritesheets/spritesheet-tiles-double.png" id="2_8fhau"]
+[ext_resource type="Texture2D" uid="uid://dx6spj0gx4p5e" path="res://assets/Spritesheets/Enemies/02_Enemies_Schimmel_2_150x150.png" id="2_f3r3t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ds4fp"]
 size = Vector2(120, 66)
@@ -21,6 +22,15 @@ position = Vector2(1.5, 6)
 shape = SubResource("RectangleShape2D_ds4fp")
 
 [node name="Sprite2D" type="Sprite2D" parent="DamageArea2D"]
+visible = false
 texture = SubResource("AtlasTexture_k4mtd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="DamageArea2D"]
+position = Vector2(-32, 8)
+texture = ExtResource("2_f3r3t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="DamageArea2D/Sprite2D2"]
+position = Vector2(64, 0)
+texture = ExtResource("2_f3r3t")
 
 [connection signal="body_entered" from="DamageArea2D" to="DamageArea2D" method="_on_body_entered"]
