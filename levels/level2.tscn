@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=70 format=4 uid="uid://burbvupsm8oi3"]
-=======
-[gd_scene load_steps=65 format=4 uid="uid://burbvupsm8oi3"]
->>>>>>> 6721dfc72231858f48883cf41559093e44a47d66
+[gd_scene load_steps=71 format=4 uid="uid://burbvupsm8oi3"]
 
 [ext_resource type="Script" uid="uid://d3r87rcru1j84" path="res://scripts/game.gd" id="1_sr7fn"]
 [ext_resource type="PackedScene" uid="uid://hgdiuf70py43" path="res://player.tscn" id="2_giimr"]
