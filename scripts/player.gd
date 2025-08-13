@@ -173,7 +173,7 @@ func loose_game(body: Node2D) -> void:
 	if body.name == "Player":  # or check for group, or class_name
 		var hud = body.get_child(3) #4 is hud
 		hud.show_game_over()
-		$AnimatedSprite2D.play("damaged")
+		$AnimatedSprite2D.play("dead")
 		set_physics_process(false)
 
 

@@ -29,7 +29,7 @@ script = ExtResource("1_4qgnl")
 layout_mode = 1
 offset_right = 4000.0
 offset_bottom = 2000.0
-scale = Vector2(0.345, 0.345)
+scale = Vector2(0.343, 0.343)
 texture = ExtResource("2_nwri0")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -139,7 +139,7 @@ offset_right = 584.0
 offset_bottom = 191.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(688, 344)
+position = Vector2(685.72, 342.85)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(0.7, 0.7)
 

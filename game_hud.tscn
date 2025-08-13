@@ -75,6 +75,7 @@ scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 
 [node name="SpeedDigits" type="HBoxContainer" parent="CanvasLayer/SpeedContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("1_q4g6c")
 frames = ExtResource("4_2uf8q")
