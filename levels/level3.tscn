@@ -727,8 +727,9 @@ tile_map_data = PackedByteArray("AADw/wAAAQAAAAAAAADw/wEAAQABAAEAAADw/wIAAQABAAE
 tile_set = SubResource("TileSet_xjqad")
 
 [node name="00WinningLight600x3000" type="Sprite2D" parent="Map_node"]
-position = Vector2(46336, -136)
-scale = Vector2(8, 1)
+position = Vector2(45104, -1040)
+rotation = 1.5708
+scale = Vector2(5, 0.07)
 texture = ExtResource("12_rg68n")
 
 [node name="Area2D" type="Area2D" parent="."]
