@@ -34,6 +34,9 @@ var last_safe_position: Vector2
 
 @onready var sfx_jump: AudioStreamPlayer = $sfxJump
 @onready var sfx_take_damage: AudioStreamPlayer = $sfxTakeDamage
+@onready var sfx_slide: AudioStreamPlayer = $SfxSlide
+@onready var sfx_glide: AudioStreamPlayer = $SfxGlide
+@onready var sfx_coin_collect: AudioStreamPlayer = $SfxCoinCollectV1
 
 var coins = 0 
 var current_level = 0
@@ -69,6 +72,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jumping = false
 		gliding = false
+		sfx_glide.stop()
 		jump_held_time = 0.0
 		last_safe_position = global_position+Vector2(-250,0)
 		
@@ -90,9 +94,11 @@ func _physics_process(delta: float) -> void:
 			if not gliding and jump_held_time >= GLIDE_HOLD_THRESHOLD:
 				gliding = true
 				print("gliding")
+				sfx_glide.play()
 		else:
 			#On release
 			gliding = false
+			sfx_glide.stop()
 
 	
 	if Input.is_action_just_pressed("slide") and is_on_floor() and not sliding:
@@ -101,6 +107,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x += slide_boost
 		$CollisionShape2D.shape.size.y = slide_height
 		$CollisionShape2D.position.y = slide_collider_pos_height
+		sfx_slide.play()
 		
 	if sliding:
 		slide_timer -= delta
@@ -148,6 +155,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_coin_entered() -> void:
 	coins += 1
+	sfx_coin_collect.play()
 	var coin_digits = $Game_Hud/CanvasLayer/CoinContainer/CoinDigits
 	coin_digits.set_value(coins)
 
@@ -173,7 +181,12 @@ func loose_game(body: Node2D) -> void:
 	if body.name == "Player":  # or check for group, or class_name
 		var hud = body.get_child(3) #4 is hud
 		hud.show_game_over()
+		sfx_glide.stop()
+		sfx_jump.stop()
+		sfx_slide.stop()
+		sfx_take_damage.stop()
 		$AnimatedSprite2D.play("dead")
+		sfx_take_damage.play()
 		set_physics_process(false)
 
 

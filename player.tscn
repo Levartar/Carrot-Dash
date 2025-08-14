@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://hgdiuf70py43"]
+[gd_scene load_steps=37 format=3 uid="uid://hgdiuf70py43"]
 
 [ext_resource type="Script" uid="uid://y5pyt15dgekg" path="res://scripts/player.gd" id="1_sweqy"]
 [ext_resource type="Shader" uid="uid://bmhlrk8uyvfh7" path="res://shader/flash.gdshader" id="2_2hs0m"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://6swrfx3qbjtd" path="res://assets/Spritesheets/spritesheet-tiles-double.png" id="5_b26j0"]
 [ext_resource type="AudioStream" uid="uid://bq6bwcob4o3pw" path="res://assets/Sounds/sfx_jump.ogg" id="6_2hs0m"]
 [ext_resource type="AudioStream" uid="uid://470uti52y3v2" path="res://assets/Sounds/sfx_bump.ogg" id="7_1jxqw"]
+[ext_resource type="AudioStream" uid="uid://b66dervu8v388" path="res://assets/Sounds/sfx_glide.ogg" id="7_n7ghd"]
+[ext_resource type="AudioStream" uid="uid://bjeav108uavsq" path="res://assets/Sounds/sfx_coin_collect.mp3" id="7_nvl01"]
+[ext_resource type="AudioStream" uid="uid://1ixjwhjrt377" path="res://assets/Sounds/sfx_coin_collect_v1.ogg" id="8_ivps1"]
+[ext_resource type="AudioStream" uid="uid://de5r07gndnffc" path="res://assets/Sounds/sfx_slilde.ogg" id="9_b26j0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7ghd"]
 shader = ExtResource("2_2hs0m")
@@ -277,9 +281,29 @@ libraries = {
 
 [node name="Player" type="Node2D" parent="."]
 
+[node name="SfxCoinCollect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nvl01")
+volume_db = -4.0
+pitch_scale = 1.33
+
+[node name="SfxCoinCollectV1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ivps1")
+volume_db = -4.0
+pitch_scale = 1.1
+
+[node name="SfxGlide" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_n7ghd")
+volume_db = -6.0
+pitch_scale = 1.4
+
 [node name="sfxJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2hs0m")
 volume_db = -16.0
+
+[node name="SfxSlide" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_b26j0")
+volume_db = -3.0
+pitch_scale = 0.9
 
 [node name="sfxTakeDamage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_1jxqw")
